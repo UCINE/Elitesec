@@ -13,7 +13,7 @@ export default function Contact() {
                     
                     <div className="max-w-2xl mx-auto">
                         <p className="text-xl text-gray-400 mb-12">
-                            Want to talk? Send us an email and we'll get back to you as soon as possible.
+                            Want to talk? Send us an email and we&apos;ll get back to you as soon as possible.
                         </p>
                         
                         <div className="inline-block p-6 bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 hover:border-red-700/50 transition-all duration-300">

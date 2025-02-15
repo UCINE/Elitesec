@@ -3,6 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['flowbite.s3.amazonaws.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   async headers() {
     return [
@@ -21,6 +27,7 @@ const nextConfig = {
       },
     ];
   },
+  output: 'standalone',
 };
 
 const withNextra = require('nextra')({
