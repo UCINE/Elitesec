@@ -49,7 +49,7 @@ export default function About() {
                         Everything you need to know about us
                     </p>
                     <p className="mt-6 text-lg leading-8 text-gray-400">
-                        The Elites&apos; Security is a <i>@1337</i> student-run club with the goal of providing guidance, awareness and education in the security field. To achieve our goals, the club’s organize various type of activities such:
+                        EliteSec is a <i>@1337</i> student-run club with the goal of providing guidance, awareness and education in the security field. To achieve our goals, the club’s organize various type of activities such:
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-16 lg:max-w-7xl">
@@ -57,7 +57,7 @@ export default function About() {
                         {features.map((feature) => (
                             <div key={feature.name} className="relative pl-16">
                                 <dt className="text-base font-semibold leading-7 text-white">
-                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500">
+                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-red-700">
                                         <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                                     </div>
                                     {feature.name}

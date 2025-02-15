@@ -9,7 +9,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>The Elites&apos; Security</title>
+        <title>EliteSec.</title>
       </head>
       <body className="scroll-smooth antialiased [font-feature-settings:'ss01']">
         {children}

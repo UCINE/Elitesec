@@ -1,10 +1,8 @@
 "use client"; // This is a client component 👈🏽
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-
-
+import { FlagIcon } from '@heroicons/react/24/outline';
 
 export default function Header() {
     return (
@@ -25,119 +23,44 @@ export default function Header() {
 
                 className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[130px] font-inter text-white leading-[0.9] tracking-[-2px] z-[100]"
                 >
-                The Elites&apos; <br />
-                Security 
-                <span className="font-inter text-red-600">.</span>
+                Elite<span className="text-red-700">S</span>ec <br />
               </motion.h1>
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                delay: 0.15,
-                  duration: 0.95,
-                  ease: [0.165, 0.84, 0.44, 1],
-                }}
-                className="flex flex-row justify-center sm:mb-2 z-20 mx-0 mb-2 mt-8 md:mt-0 md:mb-[35px] lg:mb-[30px] max-w-2xl md:space-x-8"
-                >
-                <div className="w-1/2">
-                  <h2 className="flex items-center font-semibold text-[1em] text-white">
-                    Platform
-                  </h2>
-                  <p className="text-[14px] leading-[20px] text-white font-normal">
-                    Full access to our platform, including all questions and
-                    solutions.
-                  </p>
-                </div>
-                <div className="w-1/2">
-                  <h2 className="flex items-center font-semibold text-[1em] text-white">
-                    Community
-                  </h2>
-                  <p className="text-[14px] leading-[20px] text-white font-normal">
-                    Join a community of like-minded individuals, and learn from each
-                    other.
-                  </p>
-                </div>
-              </motion.div>
-              <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 items-center ...">                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                  delay: 0.65,
-                    duration: 0.55,
-                    ease: [0.075, 0.82, 0.965, 1],
-                  }}
-                  >
-                  <Link
-                    href="http://localhost:3000/auth/42"
-                    className="content-center group rounded-md px-4 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A]"
-                    style={{
-                    boxShadow: "0 1px 1px #0c192714, 0 1px 3px #0c192724",
-                    }}
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="black" width="28" height="28" aria-hidden="true" viewBox="50 -200 960 960"><path d="M32 412.6h330.1V578h164.7V279.1H197.3L526.8-51.1H362.1L32 279.1zM597.9 114.2L762.7-51.1H597.9zM762.7 114.2L597.9 279.1v164.8h164.8V279.1L928 114.2V-51.1H762.7z"></path><path d="M928 279.1L762.7 443.9H928z"></path></svg>
-                    <p>Continue With Intra</p>
-                  </Link>
-                </motion.div>
+              <div className="grid gap-3 items-center">
+                <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 lg:bottom-3 right-2 sm:right-4 md:right-8 lg:right-16">
                 <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                  delay: 0.65,
-                    duration: 0.55,
-                    ease: [0.075, 0.82, 0.965, 1],
-                  }}
-                  >
-                  <Link
-                    href="http://localhost:3000/auth/google"
-                    className="content-center group rounded-md px-2 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-[#f5f7f9] text-[#1E2B3A]"
-                    style={{
-                    boxShadow: "0 1px 1px #0c192714, 0 1px 3px #0c192724",
-                    }}
-                    >
-                    <svg
-                      width="28" height="28"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 18 19"
-                      >
-                      <path
-                        fillRule="evenodd"
-                        d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <p>Continue With Google</p>
-                  </Link>
-                </motion.div>
-                <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 lg:bottom-3 right-2 sm:right-4 md:right-8 lg:right-16">                  <motion.div
-
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                    delay: 0.55,
+                      delay: 0.55,
                       duration: 0.55,
                       ease: [0.075, 0.82, 0.965, 1],
                     }}
                     >
-                    <a
-                      className="pointer-events-none flex place-items-baseline gap-2 p-2 lg:pointer-events-auto lg:p-0"
-                      href="https://github.com/thelitesecurity"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div className="flex items-center gap-4">
+                      <a
+                        className="pointer-events-none lg:pointer-events-auto"
+                        href="https://github.com/thelitesecurity"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                      {" "}
-                      <Image
-                        src="/svg/github-logo.svg"
-                        alt="Github Logo"
-                        className="invert"
-                        width={100}
-                        height={40}
-                        priority={true}
-                      />
-                    </a>
+                        <svg 
+                          className="h-10 w-10 text-white hover:text-red-700"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
+                      <a
+                        className="pointer-events-none lg:pointer-events-auto"
+                        href="https://ctf.elites3c.club"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FlagIcon className="h-10 w-10 text-white hover:text-red-700" />
+                      </a>
+                    </div>
                   </motion.div>
-
                 </div>
               </div>
             </AnimatePresence>
