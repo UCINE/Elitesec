@@ -9,7 +9,7 @@ export default function Header() {
       <main className="relative">
         <div className="backd"></div>
         <div className="">
-          <div className="flex flex-col justify-center nx-font-mono py-20 sm:py-20 md:py-32 lg:py-40 xl:py-80 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
+          <div className="flex flex-col justify-center nx-font-mono py-5 sm:py-5 md:py-8 lg:py-10 xl:py-20 px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
 
           <AnimatePresence >
               <motion.h1
@@ -21,12 +21,12 @@ export default function Header() {
                   ease: [0.165, 0.84, 0.44, 1],
                 }}
 
-                className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[130px] font-inter text-white leading-[0.9] tracking-[-2px] z-[100]"
+                className="relative md:ml-[-5px] md:mb-[10px] font-extrabold text-[8vw] md:text-[60px] font-inter text-white leading-[0.9] tracking-[-2px] z-[100]"
                 >
                 Elite<span className="text-red-700">S</span>ec <br />
               </motion.h1>
-              <div className="grid gap-3 items-center">
-                <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 lg:bottom-3 right-2 sm:right-4 md:right-8 lg:right-16">
+              <div className="grid gap-1 items-center">
+                <div className="absolute bottom-1 sm:bottom-2 md:bottom-3 lg:bottom-2 right-1 sm:right-2 md:right-3 lg:right-4">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function Header() {
                       ease: [0.075, 0.82, 0.965, 1],
                     }}
                     >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-1">
                       <a
                         className="pointer-events-none lg:pointer-events-auto"
                         href="https://github.com/thelitesecurity"
@@ -44,7 +44,7 @@ export default function Header() {
                         rel="noopener noreferrer"
                       >
                         <svg 
-                          className="h-10 w-10 text-white hover:text-red-700"
+                          className="h-6 w-6 text-white hover:text-red-700"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
@@ -57,7 +57,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FlagIcon className="h-10 w-10 text-white hover:text-red-700" />
+                        <FlagIcon className="h-6 w-6 text-white hover:text-red-700" />
                       </a>
                     </div>
                   </motion.div>
