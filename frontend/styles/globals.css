@@ -50,3 +50,35 @@ body {
   position: relative;
   z-index: 1; /* Ensure content is above the background */
 }
+
+@layer components {
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+  }
+
+  .tilt-card:hover {
+    transform: perspective(1000px);
+  }
+
+  .tilt-card-content {
+    transform: translateZ(75px);
+    transition: all 0.3s ease;
+  }
+
+  .tilt-card-shadow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 0, 0, 0.1),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tilt-card:hover .tilt-card-shadow {
+    opacity: 1;
+  }
+}

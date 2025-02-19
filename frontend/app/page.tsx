@@ -5,12 +5,14 @@ import About from "@/components/About";
 // import Blog from "@/components/Blog";
 import Gallery from "@/components/Gallery"; // Import getCloudinaryImages function
 import Contact from "@/components/Contact";
+import Team from "@/components/Team";
 
 export default function Home() {
   return (
     <div className="">
       <Header />
       <About />
+      {/* <Team /> */}
       <Gallery />
       <Contact />
       {/* <Blog /> */}
