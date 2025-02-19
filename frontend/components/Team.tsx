@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useMotionTemplate, useMotionValue, useSpring, type SpringOptions } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Spotlight } from '@/components/ui/spotlight';
 
 interface TeamMember {
@@ -17,15 +17,33 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
+    name: "Lahoucine Hamouni",
+    role: "President",
+    image: "/team/omar.jpg",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+  {
     name: "Mohsine El Hadaoui",
-    role: "Technical Staff and CTF Creator",
+    role: "Vice President",
     image: "/team/jalal.jpg",
     socials: {
-      github: "https://github.com/0xJB",
+      github: "https://github.com/m0hs1ne",
       linkedin: "https://linkedin.com/in/jalalbellamine"
     }
   },
-  // Add more team members here
+  {
+    name: "Boubker Ahbibe",
+    role: "Technical Staff",
+    image: "/team/mohsine.jpg",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+
 ];
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
@@ -36,11 +54,6 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   const xSpring = useSpring(x, { stiffness: 150, damping: 15 });
   const ySpring = useSpring(y, { stiffness: 150, damping: 15 });
 
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-
-  const transform = useMotionTemplate`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
 
@@ -50,42 +63,42 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    const xPos = mouseX / width - 0.5;
-    const yPos = mouseY / height - 0.5;
+    // Convert coordinates to -1 to 1 range
+    const xPos = (mouseX / width - 0.5) * 2;
+    const yPos = (mouseY / height - 0.5) * 2;
 
-    x.set(xPos);
-    y.set(yPos);
-    rotateX.set(yPos * -20); // Adjust rotation intensity here
-    rotateY.set(xPos * 20); // Adjust rotation intensity here
+    x.set(xPos * 10); // Multiply for stronger effect
+    y.set(yPos * 10);
   };
 
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
-    rotateX.set(0);
-    rotateY.set(0);
   };
 
   return (
-    <motion.div 
-      ref={ref}
-      className="relative group"
-      style={{
-        transformStyle: 'preserve-3d',
-        transform
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Spotlight 
-        className="opacity-0 group-hover:opacity-100" 
-        size={300}
-        springOptions={{ bounce: 0, damping: 15, stiffness: 150 }}
-      />
-      <div className="bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 relative overflow-hidden border border-zinc-800 transition-all duration-200">
-        <div className="relative z-10" style={{ transform: 'translateZ(75px)' }}>
+    <div className="relative group perspective-1000" style={{ zIndex: 20 }}>
+      <motion.div
+        ref={ref}
+        className="relative w-full bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-800"
+        style={{
+          transformStyle: "preserve-3d",
+          rotateX: xSpring,
+          rotateY: ySpring,
+          isolation: "isolate", // Creates a new stacking context
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ scale: 1.02 }}
+      >
+        <Spotlight
+          className="opacity-0 group-hover:opacity-100"
+          size={300}
+          springOptions={{ bounce: 0, damping: 15, stiffness: 150 }}
+        />
+        <div style={{ transform: "translateZ(50px)" }}>
           <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-zinc-800">
-            <Image 
+            <Image
               src={member.image}
               alt={member.name}
               width={96}
@@ -93,11 +106,9 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               className="object-cover"
             />
           </div>
-          
           <div className="text-center">
             <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
             <p className="text-red-500 mb-4 font-medium">{member.role}</p>
-            
             <div className="flex justify-center gap-4">
               {member.socials.github && (
                 <a 
@@ -128,8 +139,8 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="py-8 8 mx-auto max-w-7xl">
+    <div className="py-8 8 mx-auto max-w-7xl" id="gallery">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {imageNames.map((imageName, index) => (
           <div key={index} className="h-auto max-w-full rounded-lg overflow-hidden">

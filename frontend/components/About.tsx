@@ -42,7 +42,7 @@ const features = [
 
 export default function About() {
   return (
-      <div className=" py-16 px-10">
+      <div className=" py-16 px-10" id="about">
           <div className="mx-auto max-w-7xl">
               <div className="mx-auto max-w-2xl lg:mx-0">
                     <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-6xl">
