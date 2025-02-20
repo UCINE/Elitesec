@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { Spotlight } from '@/components/ui/spotlight';
+import { motion } from 'framer-motion';
 
 interface TeamMember {
   name: string;
@@ -19,19 +18,19 @@ const teamMembers: TeamMember[] = [
   {
     name: "Lahoucine Hamouni",
     role: "Club Leader",
-    image: "/team/omar.jpg",
+    image: "/images/team/Lahoucine.jpg",
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github.com/UCINE",
+      linkedin: "https://www.linkedin.com/in/ucine/"
     }
   },
   {
     name: "Mohsine El Hadaoui",
     role: "Technical Staff",
-    image: "/team/jalal.jpg",
+    image: "/images/team/Mohsine.jpeg",
     socials: {
       github: "https://github.com/m0hs1ne",
-      linkedin: "https://linkedin.com/in/jalalbellamine"
+      linkedin: "https://linkedin.com/in/mohsine-el-hadaoui"
     }
   },
   {
@@ -39,121 +38,84 @@ const teamMembers: TeamMember[] = [
     role: "Communication Manager",
     image: "/images/team/Hamza.png",
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github.com/hatalhao",
+      linkedin: "www.linkedin.com/in/hamza-talhaoui-408959158"
     }
   },
-  {
-    name: "Boubker Ahbibe",
-    role: "General Staff",
-    image: "/team/mohsine.jpg",
-    socials: {
-      github: "https://github.com",
-      // linkedin: "https://linkedin.com"
-    }
-  },
-  {
-    name: "Amine Essadik",
-    role: "General Staff",
-    image: "/team/jalal.jpg",
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
-    }
-  },
-  {
-    name: "Abdelilah Benlahbib",
-    role: "General Staff",
-    image: "/team/omar.jpg",
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
-    }
-  },
-  {
-    name: "Mouad El Fargoul",
-    role: "General Staff",
-    image: "/team/jalal.jpg",
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
-    }
-  },
+  // {
+  //   name: "Boubker Ahbibe",
+  //   role: "General Staff",
+  //   image: "/images/team/Boubker.png",
+  //   socials: {
+  //     github: "https://github.com",
+  //     // linkedin: "https://linkedin.com"
+  //   }
+  // },
+  // {
+  //   name: "Amine Essadiki",
+  //   role: "General Staff",
+  //   image: "/team/jalal.jpg",
+  //   socials: {
+  //     github: "https://github.com",
+  //     linkedin: "https://linkedin.com"
+  //   }
+  // },
+  // {
+  //   name: "Abdelilah Benlahbib",
+  //   role: "General Staff",
+  //   image: "/team/omar.jpg",
+  //   socials: {
+  //     github: "https://github.com",
+  //     linkedin: "https://linkedin.com"
+  //   }
+  // },
+  // {
+  //   name: "Mouad El Fargoul",
+  //   role: "General Staff",
+  //   image: "/team/jalal.jpg",
+  //   socials: {
+  //     github: "https://github.com",
+  //     linkedin: "https://linkedin.com"
+  //   }
+  // },
   {
     name: "Marouane Benchieck",
     role: "Advisor",
-    image: "/team/mohsine.jpg",
+    image: "/images/team/Marouane.jpg",
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github.com/Mabenchi",
+      linkedin: "https://www.linkedin.com/in/marouane-benchiekh"
     }
   },
 
 ];
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const xSpring = useSpring(x, { stiffness: 150, damping: 15 });
-  const ySpring = useSpring(y, { stiffness: 150, damping: 15 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-
-    const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    // Convert coordinates to -1 to 1 range
-    const xPos = (mouseX / width - 0.5) * 2;
-    const yPos = (mouseY / height - 0.5) * 2;
-
-    x.set(xPos * 10); // Multiply for stronger effect
-    y.set(yPos * 10);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
   return (
-    <div className="relative group perspective-1000" style={{ zIndex: 20 }}>
-      <motion.div
-        ref={ref}
-        className="relative w-full bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-800"
-        style={{
-          transformStyle: "preserve-3d",
-          rotateX: xSpring,
-          rotateY: ySpring,
-          isolation: "isolate", // Creates a new stacking context
-        }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        whileHover={{ scale: 1.02 }}
-      >
-        <Spotlight
-          className="opacity-0 group-hover:opacity-100"
-          size={300}
-          springOptions={{ bounce: 0, damping: 15, stiffness: 150 }}
+    <div className="relative group">
+      <div className="relative w-full h-[400px] bg-zinc-900/50 rounded-xl overflow-hidden border border-zinc-800">
+        <Image
+          src={member.image}
+          alt={member.name}
+          fill
+          className="object-cover"
         />
-        <div style={{ transform: "translateZ(50px)" }}>
-          <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-zinc-800">
-            <Image
-              src={member.image}
-              alt={member.name}
-              width={96}
-              height={96}
-              className="object-cover"
-            />
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-            <p className="text-red-500 mb-4 font-medium">{member.role}</p>
+        
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+          <div className="flex flex-col items-center">
+            <div className="text-2xl font-semibold text-white mb-2">
+              {member.name.split(' ').map((part, index, array) => (
+                <React.Fragment key={index}>
+                  {index > 0 && ' '}
+                  <span>{part}</span>
+                  {index === 0 && "'"}
+                </React.Fragment>
+              ))}
+              <span className="text-red-500">.</span>
+            </div>
+            <span className="text-red-500 mb-3 font-medium">
+              {member.role}
+            </span>
             <div className="flex justify-center gap-4">
               {member.socials.github && (
                 <a 
@@ -184,7 +146,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

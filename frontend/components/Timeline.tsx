@@ -6,7 +6,7 @@ import {
   useTransform,
   motion,
 } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
 
@@ -190,6 +190,66 @@ const timelineData: TimelineEntry[] = [
 
 ];
 
+const TimelineEntry = ({ 
+  item, 
+  index, 
+  activeIndex, 
+  onInView 
+}: { 
+  item: TimelineEntry;
+  index: number;
+  activeIndex: number | null;
+  onInView: (index: number) => void;
+}) => {
+  const titleRef = useRef(null);
+  const isInView = useInView(titleRef, { margin: "-40% 0px -40% 0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      onInView(index);
+    }
+  }, [isInView, index, onInView]);
+
+  return (
+    <div
+      key={index}
+      className="flex justify-start pt-6 sm:pt-10 md:pt-40 md:gap-10"
+      ref={titleRef}
+    >
+      <div className="sticky flex flex-col md:flex-row z-40 items-center top-20 sm:top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+        <div className="h-8 sm:h-10 absolute left-3 md:left-3 w-8 sm:w-10 rounded-full bg-zinc-900 flex items-center justify-center">
+          <div className={`h-3 w-3 sm:h-4 sm:w-4 rounded-full ${
+            activeIndex === index 
+              ? 'bg-red-500 border-2 border-red-500' 
+              : 'bg-red-500/50 border-2 border-red-500'
+          }`} />
+        </div>
+        <h3 className={`hidden md:block text-xl md:pl-20 md:text-5xl font-bold transition-colors duration-300 ${
+          activeIndex === index ? 'text-red-500' : 'text-zinc-700'
+        }`}>
+          {item.title}
+        </h3>
+      </div>
+
+      <div className="relative pl-16 sm:pl-20 pr-4 md:pl-4 w-full">
+        <h3 className={`md:hidden block text-xl sm:text-2xl mb-3 sm:mb-4 text-left font-bold transition-colors duration-300 ${
+          activeIndex === index ? 'text-red-500' : 'text-zinc-700'
+        }`}>
+          {item.title}
+        </h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.2 }}
+        >
+          {item.content}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
 export default function Timeline() {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -211,8 +271,12 @@ export default function Timeline() {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  const handleInView = useCallback((index: number) => {
+    setActiveIndex(index);
+  }, []);
+
   return (
-    <section className="w-full bg-black" ref={containerRef} id="events">
+    <section className="w-full bg-black pb-10 sm:pb-0" ref={containerRef} id="events">
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <motion.h2 
           className="text-4xl font-bold text-white sm:text-5xl mb-4"
@@ -233,57 +297,16 @@ export default function Timeline() {
         </motion.p>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {timelineData.map((item, index) => {
-          const titleRef = useRef(null);
-          const isInView = useInView(titleRef, { margin: "-40% 0px -40% 0px" });
-
-          // Update active index when section is in view
-          useEffect(() => {
-            if (isInView) {
-              setActiveIndex(index);
-            }
-          }, [isInView, index]);
-
-          return (
-            <div
-              key={index}
-              className="flex justify-start pt-10 md:pt-40 md:gap-10"
-              ref={titleRef}
-            >
-              <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-                <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-zinc-900 flex items-center justify-center">
-                  <div className={`h-4 w-4 rounded-full ${
-                    activeIndex === index 
-                      ? 'bg-red-500 border-2 border-red-500' 
-                      : 'bg-red-500/50 border-2 border-red-500'
-                  }`} />
-                </div>
-                <h3 className={`hidden md:block text-xl md:pl-20 md:text-5xl font-bold transition-colors duration-300 ${
-                  activeIndex === index ? 'text-red-500' : 'text-zinc-700'
-                }`}>
-                  {item.title}
-                </h3>
-              </div>
-
-              <div className="relative pl-20 pr-4 md:pl-4 w-full">
-                <h3 className={`md:hidden block text-2xl mb-4 text-left font-bold transition-colors duration-300 ${
-                  activeIndex === index ? 'text-red-500' : 'text-zinc-700'
-                }`}>
-                  {item.title}
-                </h3>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {item.content}
-                </motion.div>
-              </div>
-            </div>
-          );
-        })}
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-10 sm:pb-20">
+        {timelineData.map((item, index) => (
+          <TimelineEntry
+            key={item.title}
+            item={item}
+            index={index}
+            activeIndex={activeIndex}
+            onInView={handleInView}
+          />
+        ))}
         
         <div
           style={{ height: height + "px" }}

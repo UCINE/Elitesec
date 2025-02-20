@@ -1,5 +1,6 @@
 import { NavBar } from "@/components/ui/nav-bar"
 import Newsletter from "@/components/newsletter";
+import Blog from "@/components/Blog";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import About from "@/components/About";
@@ -16,8 +17,9 @@ export default function Home() {
       <Header />
       <About />
       <Timeline />
+      {/* <Blog /> */}
       {/* <Gallery /> */}
-      {/* <Team /> */}
+      <Team />
       <Contact />
       <Footer />
     </div>

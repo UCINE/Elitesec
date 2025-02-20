@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { Home, Users, Calendar, Image, Mail } from "lucide-react"
+import { Home, Users, Calendar, Image, Mail, Shield } from "lucide-react"
 
 interface NavItem {
   name: string
@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   {
     name: "About",
     url: "#about",
-    icon: Users
+    icon: Shield
   },
   {
     name: "Timeline",

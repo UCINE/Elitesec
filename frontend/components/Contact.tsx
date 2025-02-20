@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaFontAwesomeFlag } from 'react-icons/fa';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -23,10 +23,10 @@ export default function Contact() {
   };
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/EliteSec', name: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/company/elitesec', name: 'LinkedIn' },
-    { icon: FaTwitter, href: 'https://twitter.com/elitesec', name: 'Twitter' },
-    { icon: FaInstagram, href: 'https://instagram.com/elitesec', name: 'Instagram' }
+    { icon: FaGithub, href: 'https://github.com/thelitesecurity', name: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/the-elites-security', name: 'LinkedIn' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/elitesec42/', name: 'Instagram' },
+    { icon: FaFontAwesomeFlag, href: 'https://ctf.elites3c.club/', name: 'CTF Platform' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
