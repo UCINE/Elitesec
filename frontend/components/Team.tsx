@@ -18,7 +18,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Lahoucine Hamouni",
-    role: "President",
+    role: "Club Leader",
     image: "/team/omar.jpg",
     socials: {
       github: "https://github.com",
@@ -27,7 +27,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Mohsine El Hadaoui",
-    role: "Vice President",
+    role: "Technical Staff",
     image: "/team/jalal.jpg",
     socials: {
       github: "https://github.com/m0hs1ne",
@@ -35,8 +35,53 @@ const teamMembers: TeamMember[] = [
     }
   },
   {
+    name: "Hamza Talhaoui",
+    role: "Communication Manager",
+    image: "/images/team/Hamza.png",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+  {
     name: "Boubker Ahbibe",
-    role: "Technical Staff",
+    role: "General Staff",
+    image: "/team/mohsine.jpg",
+    socials: {
+      github: "https://github.com",
+      // linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Amine Essadik",
+    role: "General Staff",
+    image: "/team/jalal.jpg",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Abdelilah Benlahbib",
+    role: "General Staff",
+    image: "/team/omar.jpg",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Mouad El Fargoul",
+    role: "General Staff",
+    image: "/team/jalal.jpg",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Marouane Benchieck",
+    role: "Advisor",
     image: "/team/mohsine.jpg",
     socials: {
       github: "https://github.com",

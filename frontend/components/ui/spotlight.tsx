@@ -67,7 +67,7 @@ export function Spotlight({
         'pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200',
         'from-red-500/20 via-red-300/10 to-transparent',
         isHovered ? 'opacity-100' : 'opacity-0',
-        className
+        className ?? ''  // provide empty string as fallback
       )}
       style={{
         width: size,

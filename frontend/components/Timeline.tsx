@@ -7,22 +7,53 @@ import {
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
 
 interface TimelineEntry {
   title: string;
   date: string;
   description: string;
   content?: React.ReactNode;
+  images?: {
+    src: string;
+    alt: string;
+  }[];
 }
 
-const TimelineContent = ({ date, description, link }: { 
+const TimelineContent = ({ 
+  date, 
+  description, 
+  link,
+  images 
+}: { 
   date: string; 
   description: string;
   link?: string;
+  images?: {
+    src: string;
+    alt: string;
+  }[];
 }) => (
   <div className="bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-800 hover:border-red-500/50 transition-colors duration-300">
     <span className="text-red-500 font-mono">{date}</span>
     <p className="text-zinc-400 mt-4">{description}</p>
+    
+    {images && images.length > 0 && (
+      <div className="grid grid-cols-2 gap-4 mt-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative aspect-video rounded-lg overflow-hidden">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        ))}
+      </div>
+    )}
+
     {link && (
       <a 
         href={link}
@@ -38,25 +69,124 @@ const TimelineContent = ({ date, description, link }: {
 
 const timelineData: TimelineEntry[] = [
   {
-    title: "CTF Competition",
-    date: "December 2023",
-    description: "Organized a Capture The Flag competition focusing on web security, cryptography, and reverse engineering. Over 100 participants from different universities joined the competition.",
+    title: "Cyber Week",
+    date: "November 2023",
+    description: "Hosted a week-long event featuring cybersecurity workshops, CTF competitions, and guest talks from industry professionals.",
     content: <TimelineContent 
-      date="December 2023"
-      description="Organized a Capture The Flag competition focusing on web security, cryptography, and reverse engineering. Over 100 participants from different universities joined the competition."
-      link="https://ctf.elites3c.club"
+      date="November 2023"
+      description="Hosted a week-long event featuring cybersecurity workshops, CTF competitions, and guest talks from industry professionals."
+      images={[
+        {
+          src: "/images/events/Cyber_week-1.jpg", // Update with your image path
+          alt: "Cyber Week Event Photo 1"
+        },
+        {
+          src: "/images/events/Cyber_week-2.jpg", // Update with your image path
+          alt: "Cyber Week Event Photo 2"
+        }
+      ]}
     />
   },
   {
-    title: "Workshop Series",
-    date: "January 2024",
-    description: "Launched a series of hands-on workshops covering essential cybersecurity topics and practical defense techniques.",
+    title: "HTB Meetup for Universities",
+    date: "8-9th June 2024",
+    description: "First ever Hack The Box meetup for universities in Morocco, featuring workshops, CTF competitions, and networking opportunities.",
     content: <TimelineContent 
-      date="January 2024"
-      description="Launched a series of hands-on workshops covering essential cybersecurity topics and practical defense techniques."
+      date="8-9th June 2024"
+      description="First ever Hack The Box meetup for universities in Morocco, featuring workshops, CTF competitions, and networking opportunities."
+      images={[
+        {
+          src: "/images/events/Meetup-1.jpeg", // Update with your image path
+          alt: "Meetup Event Photo 1"
+        },
+        {
+          src: "/images/events/Meetup-2.jpeg", // Update with your image path
+          alt: "Meetup Event Photo 2"
+        }
+      ]}
     />
   },
-  // Add more events here
+
+  {
+    title: "Cybersecurity Introduction To UM6P Computer Science Students",
+    date: "October 2024",
+    description: "Introduction to cybersecurity for UM6P Computer Science students,Day one included a talk Cybersecurity 101 giving them a solid foundation in the field. On the second day, they took part in a guided CTF competition to practice their skills.",
+    content: <TimelineContent 
+      date="October 2024"
+      description="Introduction to cybersecurity for UM6P Computer Science students,Day one included a talk Cybersecurity 101 giving them a solid foundation in the field. On the second day, they took part in a guided CTF competition to practice their skills."
+      images={[
+        {
+          src: "/images/events/CS-1.jpg", // Update with your image path
+          alt: "CS Event Photo 1"
+        },
+        {
+          src: "/images/events/CS-2.jpg", // Update with your image path
+          alt: "CS Event Photo 2"
+        }
+      ]}
+    />
+  },
+
+  {
+    title: "Sparksec Collaboration",
+    date: "December 2024",
+    description: "In this unforgettable two-day event, we partnered with SpekSec Club from UEMF University in Fes to bring together experts and enthusiasts. On the first day, we hosted a series of insightful conferences and talks covering the latest trends in cybersecurity. The second day featured an engaging Capture the Flag (CTF) competition organized by our club, offering participants a hands-on challenge to test their skills and ingenuity.",
+    content: <TimelineContent 
+      date="December 2024"
+      description="In this two-day event, we partnered with SpekSec Club from UEMF University in Fes to bring together experts and enthusiasts. On the first day, we hosted a series of insightful conferences and talks covering the latest trends in cybersecurity. The second day featured an engaging Capture the Flag (CTF) competition organized by our club, offering participants a hands-on challenge to test their skills and ingenuity."
+      images={[
+        {
+          src: "/images/events/sparksec-1.jpeg", // Update with your image path
+          alt: "Sparksec Event Photo 1"
+        },
+        {
+          src: "/images/events/sparksec-2.jpg", // Update with your image path
+          alt: "Sparksec Event Photo 2"
+        }
+      ]}
+    />
+  },
+
+  {
+    title: "Cybersecurity Hackathon in Tata",
+    date: "December 2024",
+    description: "From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region.",
+    content: <TimelineContent 
+      date="December 2024"
+      description="From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region."
+      images={[
+        {
+          src: "/images/events/tata-1.jpg", // Update with your image path
+          alt: "Tata Event Photo 1"
+        },
+        {
+          src: "/images/events/tata-2.jpg", // Update with your image path
+          alt: "Tata Event Photo 2"
+        }
+      ]}
+    />
+  },
+
+  {
+    title: "ENSA Agadir Cybersecurity Workshop",
+    date: "February 2025",
+    description: "Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge.",
+    content: <TimelineContent 
+      date="February 2025"
+      description="Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge."
+      images={[
+        {
+          src: "/images/events/Ensa-1.jpg", // Update with your image path
+          alt: "Ensa Event Photo 1"
+        },
+        {
+          src: "/images/events/Ensa-2.jpg", // Update with your image path
+          alt: "Ensa Event Photo 2"
+        }
+      ]}
+    />
+  },
+
 ];
 
 export default function Timeline() {

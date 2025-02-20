@@ -23,15 +23,15 @@ const navItems: NavItem[] = [
     url: "#events",
     icon: Calendar
   },
+  // {
+  //   name: "Gallery",
+  //   url: "#gallery",
+  //   icon: Image
+  // },
   {
     name: "Team",
     url: "#team",
     icon: Users
-  },
-  {
-    name: "Gallery",
-    url: "#gallery",
-    icon: Image
   },
   {
     name: "Contact",
@@ -119,7 +119,7 @@ export function NavBar() {
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 "text-zinc-400 hover:text-red-500",
-                isActive && "text-red-500"
+                isActive ? "text-red-500" : ""
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
