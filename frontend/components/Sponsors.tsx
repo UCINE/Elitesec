@@ -20,6 +20,13 @@ const sponsors: Sponsor[] = [
     tier: 'gold'
   },
   {
+    name: 'Hack The Box',
+    logo: '/images/sponsors/HTB.png',
+    website: 'https://hackthebox.com',
+    description: 'Platform to test and advance your skills in cybersecurity',
+    tier: 'gold'
+  },
+  {
     name: 'UM6P',
     logo: '/images/sponsors/um6p.png',
     website: 'https://www.um6p.ma',
