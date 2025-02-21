@@ -8,6 +8,7 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
+  username: string;
   socials: {
     github?: string;
     linkedin?: string;
@@ -17,6 +18,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Lahoucine Hamouni",
+    username: "UCINE",
     role: "Club Leader",
     image: "/images/team/Lahoucine.jpg",
     socials: {
@@ -26,6 +28,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Mohsine El Hadaoui",
+    username: "m0hs1ne",
     role: "Technical Staff",
     image: "/images/team/Mohsine.jpeg",
     socials: {
@@ -35,6 +38,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Hamza Talhaoui",
+    username: "Hamza",
     role: "Communication Manager",
     image: "/images/team/Hamza.png",
     socials: {
@@ -42,44 +46,29 @@ const teamMembers: TeamMember[] = [
       linkedin: "www.linkedin.com/in/hamza-talhaoui-408959158"
     }
   },
-  // {
-  //   name: "Boubker Ahbibe",
-  //   role: "General Staff",
-  //   image: "/images/team/Boubker.png",
-  //   socials: {
-  //     github: "https://github.com",
-  //     // linkedin: "https://linkedin.com"
-  //   }
-  // },
-  // {
-  //   name: "Amine Essadiki",
-  //   role: "General Staff",
-  //   image: "/team/jalal.jpg",
-  //   socials: {
-  //     github: "https://github.com",
-  //     linkedin: "https://linkedin.com"
-  //   }
-  // },
-  // {
-  //   name: "Abdelilah Benlahbib",
-  //   role: "General Staff",
-  //   image: "/team/omar.jpg",
-  //   socials: {
-  //     github: "https://github.com",
-  //     linkedin: "https://linkedin.com"
-  //   }
-  // },
-  // {
-  //   name: "Mouad El Fargoul",
-  //   role: "General Staff",
-  //   image: "/team/jalal.jpg",
-  //   socials: {
-  //     github: "https://github.com",
-  //     linkedin: "https://linkedin.com"
-  //   }
-  // },
   {
-    name: "Marouane Benchieck",
+    name: "Boubker Ahbibe",
+    username: "Bob",
+    role: "General Staff",
+    image: "/images/team/Bob.jpg",
+    socials: {
+      // github: "https://github.com",
+      // linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Amine Essadiki",
+    username: "Czar",
+    role: "General Staff",
+    image: "/images/team/Amine.jpg",
+    socials: {
+      // github: "https://github.com",
+      // linkedin: "https://linkedin.com"
+    }
+  },
+  {
+    name: "Marouane Benchiekh",
+    username: "Mabenchi",
     role: "Advisor",
     image: "/images/team/Marouane.jpg",
     socials: {
@@ -98,7 +87,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
           src={member.image}
           alt={member.name}
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
         
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6">
@@ -113,6 +102,9 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               ))}
               <span className="text-red-500">.</span>
             </div>
+            <span className="text-zinc-400 text-sm mb-1 font-mono tracking-wider bg-zinc-800/50 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              {member.username}
+            </span>
             <span className="text-red-500 mb-3 font-medium">
               {member.role}
             </span>
@@ -164,6 +156,7 @@ export default function Team() {
             transition={{ duration: 0.5 }}
           >
             Meet Our Team
+            <span className="text-red-500">.</span>
           </motion.h2>
           <motion.p 
             className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto"

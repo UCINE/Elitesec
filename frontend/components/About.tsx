@@ -47,6 +47,7 @@ export default function About() {
               <div className="mx-auto max-w-2xl lg:mx-0">
                     <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-6xl">
                         Everything you need to know about us
+                        <span className="text-red-500">.</span>
                     </p>
                     <p className="mt-6 text-lg leading-8 text-gray-400">
                         EliteSec is a <i>@1337</i> student-run club with the goal of providing guidance, awareness and education in the security field. To achieve our goals, the club’s organize various type of activities such:

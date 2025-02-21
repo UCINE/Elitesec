@@ -49,6 +49,7 @@ export default function Contact() {
           variants={itemVariants}
         >
           Get in Touch
+          <span className="text-red-500">.</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">

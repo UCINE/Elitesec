@@ -157,11 +157,11 @@ const timelineData: TimelineEntry[] = [
       description="From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region."
       images={[
         {
-          src: "/images/events/tata-1.jpg", // Update with your image path
+          src: "/images/events/tata-1.jpeg", // Update with your image path
           alt: "Tata Event Photo 1"
         },
         {
-          src: "/images/events/tata-2.jpg", // Update with your image path
+          src: "/images/events/tata-2.jpeg", // Update with your image path
           alt: "Tata Event Photo 2"
         }
       ]}
@@ -285,6 +285,7 @@ export default function Timeline() {
           viewport={{ once: true }}
         >
           Our Journey
+          <span className="text-red-500">.</span>
         </motion.h2>
         <motion.p 
           className="text-zinc-400 text-lg max-w-2xl"
