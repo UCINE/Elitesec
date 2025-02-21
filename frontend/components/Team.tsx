@@ -48,21 +48,21 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Boubker Ahbibe",
-    username: "Bob",
-    role: "General Staff",
+    username: "37asm",
+    role: "Staff",
     image: "/images/team/Bob.jpg",
     socials: {
-      // github: "https://github.com",
-      // linkedin: "https://linkedin.com"
+      github: "https://github.com/bahbibe",
+      linkedin: "https://linkedin.com/in/ahbibe"
     }
   },
   {
     name: "Amine Essadiki",
     username: "Czar",
-    role: "General Staff",
+    role: "Staff",
     image: "/images/team/Amine.jpg",
     socials: {
-      // github: "https://github.com",
+      github: "https://github.com/anonymousc",
       // linkedin: "https://linkedin.com"
     }
   },
