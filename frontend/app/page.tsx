@@ -4,11 +4,11 @@ import Blog from "@/components/Blog";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import About from "@/components/About";
-// import Blog from "@/components/Blog";
-import Gallery from "@/components/Gallery"; // Import getCloudinaryImages function
+import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Team from "@/components/Team";
 import Timeline from "@/components/Timeline";
+import Sponsors from "@/components/Sponsors";
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
       <Timeline />
       {/* <Blog /> */}
       {/* <Gallery /> */}
+      <Sponsors />
       <Team />
       <Contact />
       <Footer />

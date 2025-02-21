@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { Home, Users, Calendar, Image, Mail, Shield } from "lucide-react"
+import { HeartHandshake, Users, Calendar, Image, Mail, Shield } from "lucide-react"
 
 interface NavItem {
   name: string
@@ -23,11 +23,11 @@ const navItems: NavItem[] = [
     url: "#events",
     icon: Calendar
   },
-  // {
-  //   name: "Gallery",
-  //   url: "#gallery",
-  //   icon: Image
-  // },
+  {
+    name: "Sponsors",
+    url: "#sponsors",
+    icon: HeartHandshake
+  },
   {
     name: "Team",
     url: "#team",
