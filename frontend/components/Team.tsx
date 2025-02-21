@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Hamza Talhaoui",
-    username: "Hamza",
+    username: "Mahjaoui",
     role: "Communication Manager",
     image: "/images/team/Hamza.png",
     socials: {
