@@ -1,4 +1,4 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon, BriefcaseIcon, HandRaisedIcon, PresentationChartBarIcon } from '@heroicons/react/24/outline'
 
 const features = [
     {
@@ -23,19 +23,19 @@ const features = [
         name: 'WORKSHOPS',
         description:
       'Learn hands-on cybersecurity skills from the best. Get practical knowledge to protect digital stuff!',
-        icon: FingerPrintIcon,
+        icon: BriefcaseIcon,
     },
     {
         name: 'GUIDED LEARNING',
         description:
       'Get personalized guidance from mentors in cybersecurity. Follow their lead and become a pro!',
-        icon: FingerPrintIcon,
+        icon: HandRaisedIcon,
     },
     {
         name: 'PRESENTATIONS',
         description:
       'Attend talks about cybersecurity topics. Share and learn new things about digital security!',
-        icon: FingerPrintIcon,
+        icon: PresentationChartBarIcon,
     },
     ];
 
