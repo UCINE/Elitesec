@@ -284,7 +284,7 @@ export default function Timeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Our Journey
+          Our Most Impactful Events Across Morocco.
           <span className="text-red-500">.</span>
         </motion.h2>
         <motion.p 
@@ -294,7 +294,7 @@ export default function Timeline() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Discover the exciting events and milestones in our cybersecurity journey.
+          Discover the exciting events and milestones in our cybersecurity journey in Morocco.
         </motion.p>
       </div>
 
