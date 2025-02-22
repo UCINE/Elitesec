@@ -169,12 +169,12 @@ const timelineData: TimelineEntry[] = [
   },
 
   {
-    title: "ENSA Agadir Cybersecurity Workshop",
+    title: "HTB Meetup for ENSA Agadir",
     date: "February 2025",
-    description: "Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge.",
+    description: "Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge using Hack The Box dedecated labs.",
     content: <TimelineContent 
       date="February 2025"
-      description="Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge."
+      description="Hosted a cybersecurity workshop for ENSA Agadir students, where we introduced students to the fundamentals of cybersecurity and ethical hacking. The workshop included hands-on exercises and a Capture the Flag (CTF) competition to help students apply their newfound knowledge using Hack The Box dedecated labs."
       images={[
         {
           src: "/images/events/Ensa-1.jpg", // Update with your image path
