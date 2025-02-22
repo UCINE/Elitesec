@@ -109,9 +109,9 @@ const timelineData: TimelineEntry[] = [
   },
 
   {
-    title: "Cybersecurity Introduction To UM6P Computer Science Students",
+    title: "Cybersecurity event for UM6P-CS Students",
     date: "October 2024",
-    description: "Introduction to cybersecurity for UM6P Computer Science students,Day one included a talk Cybersecurity 101 giving them a solid foundation in the field. On the second day, they took part in a guided CTF competition to practice their skills.",
+    description: "Introduction to cybersecurity for UM6P Computer Science students,Day one included a talks Cybersecurity 101 giving them a solid foundation in the field. On the second day, they took part in a guided CTF competition to practice their skills.",
     content: <TimelineContent 
       date="October 2024"
       description="Introduction to cybersecurity for UM6P Computer Science students,Day one included a talk Cybersecurity 101 giving them a solid foundation in the field. On the second day, they took part in a guided CTF competition to practice their skills."
@@ -129,9 +129,9 @@ const timelineData: TimelineEntry[] = [
   },
 
   {
-    title: "Sparksec Collaboration",
+    title: "Cybersecurity event for Euro-Med University",
     date: "December 2024",
-    description: "In this unforgettable two-day event, we partnered with SpekSec Club from UEMF University in Fes to bring together experts and enthusiasts. On the first day, we hosted a series of insightful conferences and talks covering the latest trends in cybersecurity. The second day featured an engaging Capture the Flag (CTF) competition organized by our club, offering participants a hands-on challenge to test their skills and ingenuity.",
+    description: "In this unforgettable two-day event, we partnered with SparkSec Club from UEMF University in Fes to bring together experts and enthusiasts. On the first day, we hosted a series of insightful conferences and talks covering the latest trends in cybersecurity. The second day featured an engaging Capture the Flag (CTF) competition organized by our club, offering participants a hands-on challenge to test their skills and ingenuity.",
     content: <TimelineContent 
       date="December 2024"
       description="In this two-day event, we partnered with SpekSec Club from UEMF University in Fes to bring together experts and enthusiasts. On the first day, we hosted a series of insightful conferences and talks covering the latest trends in cybersecurity. The second day featured an engaging Capture the Flag (CTF) competition organized by our club, offering participants a hands-on challenge to test their skills and ingenuity."
