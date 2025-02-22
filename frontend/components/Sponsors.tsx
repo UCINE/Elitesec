@@ -26,13 +26,13 @@ const sponsors: Sponsor[] = [
     description: 'The First Cybersecurity Performance Center, a leader in cybersecurity training for individuals and organizations.',
     tier: 'gold'
   },
-  {
-    name: 'UM6P',
-    logo: '/images/sponsors/um6p.png',
-    website: 'https://www.um6p.ma',
-    description: 'Mohammed VI Polytechnic University',
-    tier: 'silver'
-  },
+  // {
+  //   name: 'UM6P',
+  //   logo: '/images/sponsors/um6p.png',
+  //   website: 'https://www.um6p.ma',
+  //   description: 'Mohammed VI Polytechnic University',
+  //   tier: 'silver'
+  // },
   // Add more sponsors as needed
 ];
 
