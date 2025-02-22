@@ -13,7 +13,7 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: '1337 School',
+    name: 'UM6P-1337 School',
     logo: '/images/sponsors/1337.png',
     website: 'https://1337.ma',
     description: 'Programming School where innovation meets excellence',
@@ -23,7 +23,7 @@ const sponsors: Sponsor[] = [
     name: 'Hack The Box',
     logo: '/images/sponsors/HTB.png',
     website: 'https://hackthebox.com',
-    description: 'Platform to test and advance your skills in cybersecurity',
+    description: 'The First Cybersecurity Performance Center, a leader in cybersecurity training for individuals and organizations.',
     tier: 'gold'
   },
   {
