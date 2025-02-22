@@ -50,7 +50,7 @@ export default function About() {
                         <span className="text-red-500">.</span>
                     </p>
                     <p className="mt-6 text-lg leading-8 text-gray-400">
-                        EliteSec is a <i>@1337</i> student-run club with the goal of providing guidance, awareness and education in the security field. To achieve our goals, the club’s organize various type of activities such:
+                        EliteSec is a <i>@UM6P-1337</i> student-run club with the goal of providing guidance, awareness and education in the security field. To achieve our goals, the club’s organize various type of activities such:
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-16 lg:max-w-7xl">
