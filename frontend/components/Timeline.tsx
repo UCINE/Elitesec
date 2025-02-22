@@ -151,7 +151,7 @@ const timelineData: TimelineEntry[] = [
   {
     title: "Cybersecurity Hackathon in Tata",
     date: "December 2024",
-    description: "From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region.",
+    description: "From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted a series of talks and workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region.",
     content: <TimelineContent 
       date="December 2024"
       description="From December 19 to 21, EliteSec partnered with TataConnect to host a three-day cybersecurity hackathon in Tata. During the first two days, we conducted workshops for TataConnect students, covering essential cybersecurity skills and tools. On the final day, participants put their knowledge to the test in a thrilling Capture the Flag (CTF) competition. This event fostered a dynamic learning environment and helped build a vibrant cybersecurity community in the region."
