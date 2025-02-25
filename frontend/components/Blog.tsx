@@ -125,6 +125,15 @@ export default function Blog() {
                                             {post.description}
                                         </p>
                                     </div>
+                                    <div className="relative mt-8 flex items-center gap-x-4">
+                                        <div className="text-sm leading-6">
+                                            <p className="font-semibold text-white">
+                                                <Link href={post.author.href} className="hover:text-red-500 transition-colors duration-300">
+                                                    {post.author.name}
+                                                </Link>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.article>
                         ))}
