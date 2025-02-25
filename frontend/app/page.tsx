@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       <About />
       <Timeline />
-      {/* <Blog /> */}
+      <Blog />
       {/* <Gallery /> */}
       <Sponsors />
       <Team />

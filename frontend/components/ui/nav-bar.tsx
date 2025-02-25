@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { HeartHandshake, Users, Calendar, Image, Mail, Shield } from "lucide-react"
+import { HeartHandshake, Users, Calendar, Image, Mail, Shield, BookOpen } from "lucide-react"
 
 interface NavItem {
   name: string
@@ -24,6 +24,11 @@ const navItems: NavItem[] = [
     icon: Calendar
   },
   {
+    name: "Blog",
+    url: "#blog",
+    icon: BookOpen
+  },
+  {
     name: "Sponsors",
     url: "#sponsors",
     icon: HeartHandshake
@@ -41,7 +46,7 @@ const navItems: NavItem[] = [
 ]
 
 export function NavBar() {
-  const [activeTab, setActiveTab] = useState("About") // Changed from navItems[0].name
+  const [activeTab, setActiveTab] = useState("About")
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -58,7 +63,7 @@ export function NavBar() {
         .filter(section => section.element)
 
       const viewportHeight = window.innerHeight
-      const scrollTop = window.scrollY
+      const scrollY = window.scrollY
 
       // Find the section that takes up most of the viewport
       let maxVisibleSection = sections[0]
@@ -67,9 +72,13 @@ export function NavBar() {
       sections.forEach(section => {
         const rect = section.element.getBoundingClientRect()
         const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0)
+        const elementTop = rect.top + scrollY
 
-        if (visibleHeight > maxVisibleHeight) {
-          maxVisibleHeight = visibleHeight
+        // Add a small offset to give some priority to the section near the top
+        const adjustedHeight = visibleHeight * (elementTop < viewportHeight ? 1.2 : 1)
+
+        if (adjustedHeight > maxVisibleHeight) {
+          maxVisibleHeight = adjustedHeight
           maxVisibleSection = section
         }
       })

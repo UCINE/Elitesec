@@ -1,3 +1,5 @@
+import { useConfig } from 'nextra-theme-docs'
+
 export default {
     logo: (
         <>
@@ -6,7 +8,6 @@ export default {
             </span>
         </>
     ),
-    docsRepositoryBase: 'https://github.com',
     useNextSeoProps() {
         return {
             titleTemplate: "The Elites' Security | %s"
@@ -17,10 +18,13 @@ export default {
     },
     footer: {
         text: (
-        <span>
-        ©{new Date().getFullYear()} {"Made by The Elites' Security"}
-            .
-        </span>
+            <span>
+                ©{new Date().getFullYear()} {"Made by The Elites' Security"}.
+            </span>
         )
-    }
+    },
+    // Theme customization
+    primaryHue: 359,
+    primarySaturation: 65,
+    darkMode: true,
 }
