@@ -43,6 +43,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="msvalidate.01" content="F2999D4C07EC7B48249987D285D11B15" />
         <link rel="canonical" href="https://elites3c.club" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
