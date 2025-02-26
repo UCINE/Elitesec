@@ -15,7 +15,7 @@ export const metadata = {
     siteName: "EliteSec",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
         alt: "EliteSec Cybersecurity Club Logo and Team",
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "EliteSec - Cybersecurity Student Club at UM6P-1337",
     description: "Building a community of cybersecurity enthusiasts and professionals in Morocco",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/logo.png"],
   },
   alternates: {
     canonical: 'https://elites3c.club',
