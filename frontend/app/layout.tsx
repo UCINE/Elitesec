@@ -5,9 +5,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 
 export const metadata = {
-  title: "EliteSec - Cybersecurity Student Club at UM6P-1337",
-  description: "EliteSec is Morocco's leading student-run cybersecurity club at UM6P-1337, offering workshops, CTF competitions, and training in ethical hacking and digital security.",
-  keywords: ["cybersecurity", "CTF", "UM6P", "1337", "security club", "hacking", "Morocco", "ethical hacking", "digital security", "cyber workshops"],
+  title: "EliteSec - Morocco's Cybersecurity Student Club at UM6P-1337",
+  description: "EliteSec is Morocco's leading student-run cybersecurity club at UM6P-1337, offering workshops, CTF competitions, and training in ethical hacking and digital security for Moroccan students.",
+  keywords: ["cybersecurity Morocco", "CTF competitions Morocco", "UM6P security", "1337 cybersecurity club", "Moroccan security club", "ethical hacking training", "digital security Morocco", "cybersecurity workshops", "student security club", "computer security Morocco"],
   openGraph: {
     title: "EliteSec - Cybersecurity Student Club",
     description: "Building a community of cybersecurity enthusiasts and professionals in Morocco",
@@ -46,6 +46,7 @@ export default async function RootLayout({
         <link rel="canonical" href="https://elites3c.club" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="manifest" href="/manifest.json" />
         <Script id="structured-data" type="application/ld+json">
           {`
             {

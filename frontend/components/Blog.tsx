@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import BlogPostCard from './BlogPostCard';
+import React from 'react';
 
 interface Article {
   id: string;
@@ -63,6 +64,22 @@ export default function Blog() {
 
     fetchArticles();
   }, []);
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'EliteSec Blog',
+    description: 'Expert insights on cybersecurity, penetration testing, and emerging threats',
+    url: 'https://elites3c.club/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'EliteSec',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://elites3c.club/images/logo.png'
+      }
+    }
+  };
 
   return (
     <section className="w-full bg-black py-16 sm:py-24" id="blog">
@@ -129,6 +146,10 @@ export default function Blog() {
           </motion.a>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </section>
   );
 }

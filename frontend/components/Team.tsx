@@ -85,7 +85,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
       <div className="relative w-full h-[400px] bg-zinc-900/50 rounded-xl overflow-hidden border border-zinc-800">
         <Image
           src={member.image}
-          alt={member.name}
+          alt={`${member.name} - ${member.role} at EliteSec Cybersecurity Club Morocco`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />

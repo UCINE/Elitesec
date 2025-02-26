@@ -3,6 +3,7 @@ import { NavBar } from "@/components/ui/nav-bar"
 import Header from "@/components/header";
 import About from "@/components/About";
 import dynamic from "next/dynamic";
+import FAQ from '../components/FAQ';
 
 // Import components lazily to improve initial load performance
 // const Newsletter = dynamic(() => import("@/components/sections/Newsletter"), {
@@ -39,6 +40,7 @@ export default function Home() {
       <Blog />
       <Sponsors />
       <Team />
+      {/* <FAQ /> */}
       <Contact />
       {/* <Newsletter /> */}
       {/* <Footer /> */}
