@@ -5,13 +5,14 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 
 export const metadata = {
+  metadataBase: new URL('https://www.elites3c.club'),
   title: "EliteSec - Morocco's Cybersecurity Student Club at UM6P-1337",
-  description: "EliteSec is Morocco's leading student-run cybersecurity club at UM6P-1337, offering workshops, CTF competitions, and training in ethical hacking and digital security for Moroccan students.",
+  description: "Student-run cybersecurity club at UM6P-1337, offering workshops, CTF competitions, and security training for students.",
   keywords: ["cybersecurity Morocco", "CTF competitions Morocco", "UM6P security", "1337 cybersecurity club", "Moroccan security club", "ethical hacking training", "digital security Morocco", "cybersecurity workshops", "student security club", "computer security Morocco"],
   openGraph: {
     title: "EliteSec - Cybersecurity Student Club",
     description: "Building a community of cybersecurity enthusiasts and professionals in Morocco",
-    url: "https://elites3c.club",
+    url: "https://www.elites3c.club",
     siteName: "EliteSec",
     images: [
       {
@@ -31,7 +32,7 @@ export const metadata = {
     images: ["/images/logo.png"],
   },
   alternates: {
-    canonical: 'https://elites3c.club',
+    canonical: 'https://www.elites3c.club',
   }
 };
 
@@ -45,8 +46,8 @@ export default async function RootLayout({
       <head>
         <meta name="msvalidate.01" content="F2999D4C07EC7B48249987D285D11B15" />
         <meta name="google-site-verification" content="iGmRq4QDkCrzfhXWYT95XpkhpCfTvLI-b3-cnWv_d1w" />
-        <link rel="canonical" href="https://elites3c.club" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Remove this line below - Next.js already adds viewport from metadata API */}
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         <Script id="structured-data" type="application/ld+json">
