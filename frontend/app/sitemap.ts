@@ -20,6 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    // Add more URLs as you create more content
+    {
+      url: "https://elites3c.club/blog/articles/introduction-into-cryptography",
+      lastModified: new Date("2024-03-03"),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }
   ];
 }
