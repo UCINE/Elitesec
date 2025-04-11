@@ -36,16 +36,16 @@ const teamMembers: TeamMember[] = [
       linkedin: "https://linkedin.com/in/mohsine-el-hadaoui"
     }
   },
-  {
-    name: "Hamza Talhaoui",
-    username: "Mahjaoui",
-    role: "Communication Manager",
-    image: "/images/team/Hamza.png",
-    socials: {
-      github: "https://github.com/hatalhao",
-      linkedin: "www.linkedin.com/in/hamza-talhaoui-408959158"
-    }
-  },
+  // {
+  //   name: "Hamza Talhaoui",
+  //   username: "Mahjaoui",
+  //   role: "Communication Manager",
+  //   image: "/images/team/Hamza.png",
+  //   socials: {
+  //     github: "https://github.com/hatalhao",
+  //     linkedin: "www.linkedin.com/in/hamza-talhaoui-408959158"
+  //   }
+  // },
   {
     name: "Boubker Ahbibe",
     username: "37asm",
