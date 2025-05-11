@@ -154,7 +154,7 @@ export function NavBar() {
       <AnimatePresence>
         {showNavbar && (
           <motion.nav 
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] hidden md:block pointer-events-none"
+            className="fixed top-12 left-1/2 -translate-x-1/2 z-[100] hidden md:block pointer-events-none"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}

@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Hack The Box Meetup 2025 at UM6P-1337, connecting cybersecurity students from 42 Network campuses in Germany and Morocco for workshops, CTF challenges, and cultural exchange.">
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
     <title>Hack The Box Meetup 2025 | Bridging Borders Through Cybersecurity</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Code+Pro:wght@400;700&display=swap');
@@ -107,21 +106,6 @@
         
         nav a:hover {
             color: var(--primary-color);
-        }
-        
-        .mobile-menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
         }
         
         .hero {
@@ -850,9 +834,6 @@
                     <li><a href="#venue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Venue</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
         </div>
     </header>
 
@@ -1185,7 +1166,8 @@
                         <div class="event-content">
                             <h4 class="event-title">Workshop: "Bug Bounty"</h4>
                             <p class="event-desc">Learn effective approaches for bug bounty hunting success</p>
-                        </div> -->
+                        </div>
+                    </div> -->
                     
                     <div class="event">
                         <div class="event-time">12:00 PM</div>
@@ -1374,7 +1356,7 @@
     <script>
         // Countdown Timer
         function updateCountdown() {
-            const eventDate = new Date('May 17, 2025 09:00:00').getTime();
+            const eventDate = new Date('May 16, 2025 09:00:00').getTime();
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
             
@@ -1429,16 +1411,9 @@
             const shellCommands = ["ls -la", "chmod +x", "cat /etc/passwd", "sudo su", "nmap -sV",
                                 "ssh root@", "./exploit", "grep -r", "ps aux"];
             
-            // Add this to your existing code rain function
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.getElementById('codeRain').style.display = 'none';
-            }
-
-            // Reduce columns on mobile
-            const columnCount = window.innerWidth < 768 ? 
-                Math.min(15, Math.floor(width / 50)) : 
-                Math.min(50, Math.floor(width / 40));
-
+            // Create fewer columns for less density
+            const columnCount = Math.min(50, Math.floor(width / 40)); // Reduced density
+            
             for (let i = 0; i < columnCount; i++) {
                 const column = document.createElement('div');
                 column.className = 'code-column';
