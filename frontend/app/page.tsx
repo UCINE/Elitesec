@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import About from "@/components/About";
 import dynamic from "next/dynamic";
 import FAQ from '../components/FAQ';
+import Announcement from "@/components/Announcement";
 
 // Import components lazily to improve initial load performance
 // const Newsletter = dynamic(() => import("@/components/sections/Newsletter"), {
@@ -33,6 +34,7 @@ const Sponsors = dynamic(() => import("@/components/Sponsors"), {
 export default function Home() {
   return (
     <div className="">
+      <Announcement />
       <NavBar />
       <Header />
       <About />
