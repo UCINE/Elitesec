@@ -34,7 +34,6 @@ const Sponsors = dynamic(() => import("@/components/Sponsors"), {
 export default function Home() {
   return (
     <div className="">
-      <Announcement />
       <NavBar />
       <Header />
       <About />
