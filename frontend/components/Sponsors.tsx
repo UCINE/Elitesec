@@ -26,6 +26,13 @@ const sponsors: Sponsor[] = [
     description: 'The First Cybersecurity Performance Center, a leader in cybersecurity training for individuals and organizations.',
     tier: 'gold'
   },
+  {
+    name: 'HackerOne',
+    logo: '/images/sponsors/hackerone.png',
+    website: 'https://hackerone.com',
+    description: 'The leading hacker-powered security platform, connecting organizations with ethical hackers to find and fix vulnerabilities.',
+    tier: 'gold'
+  },
   // {
   //   name: 'UM6P',
   //   logo: '/images/sponsors/um6p.png',
