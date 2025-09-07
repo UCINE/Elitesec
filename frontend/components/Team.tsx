@@ -57,12 +57,12 @@ const teamMembers: TeamMember[] = [
     }
   },
   {
-    name: "Amine Essadiki",
-    username: "Czar",
+    name: "Abdelkarim Zaki",
+    username: "xmodz",
     role: "Staff",
-    image: "/images/team/Amine.jpg",
+    image: "/images/team/azaki.jpg",
     socials: {
-      github: "https://github.com/anonymousc",
+      github: "https://github.com/azaki",
       // linkedin: "https://linkedin.com"
     }
   },

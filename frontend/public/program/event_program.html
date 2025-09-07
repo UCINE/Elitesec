@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hack The Box Meetup 2025 | Bridging Borders Through Cybersecurity</title>
+    <title>NULLHAT Morocco 2025 | National Cybersecurity Event</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Code+Pro:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Code+Pro:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
         
         :root {
             --primary-color: #B1D245;
@@ -522,6 +522,116 @@
             color: var(--primary-color);
         }
         
+        /* Contact Section Styles */
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-center {
+            text-align: center;
+        }
+        
+        .organization-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .org-logo {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .org-logo:hover {
+            background-color: rgba(177, 210, 69, 0.1);
+            border-color: rgba(177, 210, 69, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .org-details h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+        }
+        
+        .org-details h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .contact-emails {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .contact-email {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            color: var(--primary-color);
+            opacity: 1;
+        }
+        
+        .org-address {
+            font-size: 13px;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-contact {
+                margin: 30px auto;
+                padding: 20px 0;
+            }
+            
+            .organization-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .org-logo {
+                width: 100px;
+                height: 70px;
+                padding: 12px;
+            }
+            
+            .org-details h3 {
+                font-size: 16px;
+            }
+            
+            .org-details h4 {
+                font-size: 14px;
+            }
+        }
+        
         .copyright {
             font-size: 14px;
             opacity: 0.5;
@@ -572,10 +682,11 @@
         .code-column {
             position: absolute;
             top: -100px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 500;
             color: var(--drop-text);
-            text-shadow: 0 0 5px var(--drop-text);
+            text-shadow: 0 0 8px var(--drop-text);
             white-space: nowrap;
             transform: translateY(0);
             animation: rain linear infinite;
@@ -844,6 +955,513 @@
             position: relative;
         }
 
+        /* New 2-speaker featured layout */
+        .speakers-container-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .speaker-card-featured {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .speaker-card-featured:hover::before {
+            left: 100%;
+        }
+
+        .speaker-card-featured:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(177, 210, 69, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .speaker-image-large {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .speaker-card-featured:hover .speaker-image-large {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .speaker-img-large {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .speaker-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .speaker-name-large {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .speaker-occupation-large {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .speaker-topic-large {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .speaker-bio {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .speakers-container-two {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+            
+            .speaker-card-featured {
+                padding: 30px 20px;
+            }
+            
+            .speaker-image-large {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+            }
+            
+            .speaker-name-large {
+                font-size: 24px;
+            }
+            
+            .speaker-topic-large {
+                font-size: 16px;
+            }
+        }
+
+        /* NULLHAT Showcase Styling - Similar to Live Hacking */
+        .nullhat-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            align-items: center;
+        }
+
+        .nullhat-main {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nullhat-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(177, 210, 69, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nullhat-main:hover::before {
+            opacity: 1;
+        }
+
+        .nullhat-icon {
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-main:hover .nullhat-icon {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        .nullhat-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .nullhat-tagline {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .nullhat-description {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .nullhat-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .nullhat-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-feature-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(177, 210, 69, 0.15);
+        }
+
+        .nullhat-feature-icon {
+            font-size: 24px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-feature-item:hover .nullhat-feature-icon {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .nullhat-feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .nullhat-feature-content p {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .nullhat-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+
+            .nullhat-main {
+                padding: 30px 20px;
+            }
+
+            .nullhat-title {
+                font-size: 24px;
+            }
+
+            .nullhat-feature-item {
+                padding: 15px;
+            }
+        }
+
+        /* CTF Section Styling */
+        .ctf-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .ctf-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ctf-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .ctf-card:hover::before {
+            left: 100%;
+        }
+
+        .ctf-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(177, 210, 69, 0.2);
+        }
+
+        .ctf-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+            filter: grayscale(0.3);
+            transition: all 0.3s ease;
+        }
+
+        .ctf-card:hover .ctf-icon {
+            transform: scale(1.1);
+            filter: grayscale(0);
+        }
+
+        .ctf-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .ctf-description {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Live Hacking Section Styling */
+        .live-hacking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            align-items: center;
+        }
+
+        .live-hacking-main {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .live-hacking-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(177, 210, 69, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .live-hacking-main:hover::before {
+            opacity: 1;
+        }
+
+        .live-hacking-icon {
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .live-hacking-main:hover .live-hacking-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .live-hacking-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .live-hacking-description {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .live-hacking-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(177, 210, 69, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .ctf-categories {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .ctf-card {
+                padding: 25px 20px;
+            }
+
+            .ctf-icon {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            .ctf-title {
+                font-size: 20px;
+            }
+
+            .live-hacking-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+
+            .live-hacking-main {
+                padding: 30px 20px;
+            }
+
+            .live-hacking-title {
+                font-size: 24px;
+            }
+
+            .feature-item {
+                padding: 15px;
+            }
+        }
+
         /* FAQ section styling */
         .faq-container {
             max-width: 800px;
@@ -890,6 +1508,134 @@
 
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
+        }
+
+        /* Sponsors & Partners Section Styling */
+        .sponsor-category {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .sponsor-category-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .sponsor-logo-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            width: 240px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .sponsor-logo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .sponsor-logo-item:hover::before {
+            left: 100%;
+        }
+
+        .sponsor-logo-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(177, 210, 69, 0.2);
+            background-color: rgba(177, 210, 69, 0.05);
+        }
+
+        .large-sponsor {
+            min-width: 300px;
+            min-height: 150px;
+            padding: 40px;
+        }
+
+        .sponsor-logo {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .large-sponsor .sponsor-logo {
+            max-height: 100px;
+        }
+
+        .sponsor-logo-item:hover .sponsor-logo {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+        
+        /* Specific scaling for SOLE and 1337 logos */
+        img[alt="UM6P-SOLE"], img[alt="1337 School"] {
+            transform: scale(1.3);
+        }
+
+        @media (max-width: 768px) {
+            .sponsor-category {
+                margin-bottom: 40px;
+            }
+
+            .sponsor-category-title {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            .sponsor-logos {
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .sponsor-logo-item {
+                width: 250px;
+                height: 120px;
+                padding: 20px;
+            }
+
+            .large-sponsor {
+                min-width: 280px;
+                min-height: 120px;
+                padding: 30px;
+            }
+
+            .sponsor-logo {
+                max-height: 60px;
+            }
+
+            .large-sponsor .sponsor-logo {
+                max-height: 80px;
+            }
         }
 
         /* Added schedule actions styling */
@@ -946,6 +1692,7 @@
                     <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg> About</a></li>
                     <li><a href="#schedule"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Schedule</a></li>
                     <li><a href="#speakers"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Speakers</a></li>
+                    <li><a href="#sponsors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Partners</a></li>
                     <li><a href="#venue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Venue</a></li>
                 </ul>
             </nav>
@@ -954,14 +1701,14 @@
 
     <section class="hero" id="hero">
         <div class="container">
-            <h1>Hack The Box Meetup<span>.</span></h1>
-            <h1>UM6P-1337</h1>
-            <p>An international 3-day cybersecurity experience connecting students from the 42 Network campuses in Germany and Morocco, along with UM6P-CS students, to collaborate, learn, and put their skills to the test through hands-on training, cultural exchange, and real-world challenges.</p>
+            <h1>NULLHAT MOROCCO<span>.</span></h1>
+            <p>NULL HAT is more than just a cybersecurity event, it’s a mindset. In the world of hacking, people are often labeled as white hats, black hats, or gray hats. But at NULL HAT, we believe hacking is not about the color of your hat, it’s about intent, creativity, and exploration.<br>
+            it’s a place with No labels, No ego, and No assumptions just an opportunity to learn, experiment, and grow. NULL HAT is an open space where university students come together to discover cybersecurity, share ideas, and build the skills that will shape the future of digital security in Morocco.</p>
             
             <div class="event-details">
                 <div class="detail-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    May 17-19, 2025
+                    October 31 - November 1, 2025
                 </div>
                 <div class="detail-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -1015,31 +1762,186 @@
     <section class="section" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About The Event</h2>
-                <p class="section-subtitle">A collaborative cybersecurity event bringing together students from 42 Network campuses (Berlin, Heilbronn, Wolfsburg, Benguerir, Khouribga, Tetouan, Rabat) and UM6P-CS</p>
+                <h2 class="section-title">ABOUT NULLHAT MOROCCO</h2>
+                <p class="section-subtitle"><p>NULLHAT Morocco is a national cybersecurity event that brings together university students and security researchers for collaboration, learning, competition, and live hacking. Over two days, participants will dive into expert talks, a high-stakes CTF, and hands-on hacking experiences alongside professionals, making it a unique space where knowledge meets practice.</p>
             </div>
             
             <div class="venue-info">
                 <div class="venue-details">
-                    <h3>Bridging Borders Through Cybersecurity</h3>
-                    <p>The Hack The Box Meetup is designed to foster collaboration and knowledge sharing among cybersecurity enthusiasts from different campuses. Our objectives include:</p>
+                    <h3>Empowering Morocco's Cybersecurity Future</h3>
+                    <p>NULLHAT Morocco 2025 is designed to create a lasting impact on Morocco's cybersecurity landscape, bringing together university students nationwide for an intensive learning experience. Our strategic objectives include:</p>
                     
                     <ul >
-                        <li><strong>Share knowledge</strong> across campuses</li>
-                        <li><strong>Foster collaboration</strong> between cybersecurity enthusiasts</li>
-                        <li><strong>Develop practical skills</strong> through hands-on challenges & labs</li>
-                        <li><strong>Build a stronger network</strong> between students</li>
-                        <li><strong>Promote international cooperation</strong> in security research</li>
+                        <li><strong>Empower students with high-quality cybersecurity challenges</strong> crafted from The Elite’s Security content.</li>
+                        <li><strong>Strengthen national collaboration</strong> among Moroccan universities and institutions</li>
+                        <li><strong>Raise cybersecurity awareness</strong> highlighting its importance for academic and professional growth</li>
+                        <li><strong>Expose students to professional tools</strong> and methodologies used in the cybersecurity field</li>
+                        <li><strong>Feature HackerOne partnership</strong> bringing global cybersecurity standards to Morocco</li>
+                        <li><strong>Host live hacking demonstration</strong> showcasing real-world security research</li>
                     </ul>
                 </div>
                 
-                <div class="venue-map">
-                    <img
-                      src="images/event_program.jpeg"
-                      alt="Network diagram connecting campuses"
-                      class="venue-map-image"
-                    >
-                  </div>                  
+                <div class="nullhat-showcase">
+                    <div class="nullhat-main">
+                        <div class="nullhat-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="#B1D245" stroke-width="2"/>
+                                <path d="M8 12h8M12 8v8" stroke="#B1D245" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="12" r="3" fill="#B1D245" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <h3 class="nullhat-title">NULLHAT MOROCCO</h3>
+                        <!-- <p class="nullhat-tagline">No Labels • No Ego • No Assumptions</p> -->
+                        <!-- <p class="nullhat-description">
+                            An open space where university students discover cybersecurity, share ideas, and build skills that will shape Morocco's digital security future.
+                        </p> -->
+                    </div>
+                    
+                    <div class="nullhat-features">
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🎯</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Skill Development</h4>
+                                <p>Hands-on learning through challenging CTF competitions and expert guidance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🤝</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Community Building</h4>
+                                <p>Connect with like-minded cybersecurity enthusiasts from across Morocco</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🚀</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Innovation Hub</h4>
+                                <p>Foster creativity and exploration in ethical hacking and security research</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🌍</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Global Standards</h4>
+                                <p>Learn from industry professionals and HackerOne partnership experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="ctf">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ELITESEC COMPETITION</h2>
+                <p class="section-subtitle">Test your skills across 8 challenging cybersecurity domains in our flagship Capture The Flag competition</p>
+            </div>
+            
+            <div class="ctf-categories">
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔐</div>
+                    <h3 class="ctf-title">Cryptography</h3>
+                    <p class="ctf-description">Break ciphers, analyze encryption algorithms, and uncover hidden messages through mathematical cryptanalysis.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">💥</div>
+                    <h3 class="ctf-title">PWN</h3>
+                    <p class="ctf-description">Exploit memory corruption vulnerabilities, buffer overflows, and system-level security flaws.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔄</div>
+                    <h3 class="ctf-title">Reverse Engineering</h3>
+                    <p class="ctf-description">Disassemble binaries, analyze malware, and understand program logic through reverse engineering techniques and tools.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🧩</div>
+                    <h3 class="ctf-title">Misc</h3>
+                    <p class="ctf-description">Solve creative puzzles, logic challenges, and unconventional problems that test lateral thinking.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🌐</div>
+                    <h3 class="ctf-title">Web</h3>
+                    <p class="ctf-description">Exploit web application vulnerabilities including XSS, SQL injection, and authentication bypasses.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔍</div>
+                    <h3 class="ctf-title">Forensics</h3>
+                    <p class="ctf-description">Analyze digital evidence, recover hidden data, and investigate security incidents like a digital detective.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🤖</div>
+                    <h3 class="ctf-title">AI/ML</h3>
+                    <p class="ctf-description">Attack machine learning models, manipulate AI systems, and explore adversarial artificial intelligence.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🕵️</div>
+                    <h3 class="ctf-title">OSINT</h3>
+                    <p class="ctf-description">Gather intelligence from open sources, trace digital footprints, and uncover hidden information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="live-hacking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Live Hacking Experience</h2>
+                <p class="section-subtitle">Witness professional security research in action</p>
+            </div>
+            
+            <div class="live-hacking-content">
+                <div class="live-hacking-main">
+                    <div class="live-hacking-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#B1D245"/>
+                            <circle cx="12" cy="12" r="3" fill="none" stroke="#B1D245" stroke-width="2"/>
+                            <path d="M12 1V5M12 19V23M23 12H19M5 12H1" stroke="#B1D245" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="live-hacking-title">Real-Time Security Research</h3>
+                    <p class="live-hacking-description">
+                        Experience the thrill of live ethical hacking during a comprehensive 7-day program: 5 days online followed by 2 days onsite at UM6P. Morocco's security researchers demonstrate real-world vulnerability discovery and exploitation, while participants get an exceptional opportunity to meet with HackerOne ambassadors who will review their reports and provide expert guidance before submission. This groundbreaking session showcases professional penetration testing methodologies in action.
+                    </p>
+                </div>
+                
+                <div class="live-hacking-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h4>Live Vulnerability Discovery</h4>
+                            <p>Watch experts identify and exploit real security flaws in real-time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🔴</div>
+                        <div class="feature-content">
+                            <h4>Professional Tools & Techniques</h4>
+                            <p>Learn industry-standard methodologies used by top security researchers</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div class="feature-content">
+                            <h4>HackerOne Partnership</h4>
+                            <p>Powered by global leaders in ethical hacking and security research</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1047,127 +1949,37 @@
     <section class="section" id="speakers">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" id="speakers-title">Featured Speakers</h2>
-                <p class="section-subtitle">Meet our amazing speakers</p>
+                <h2 class="section-title" id="speakers-title">Expert Speakers</h2>
+                <p class="section-subtitle">Top Moroccan cybersecurity researchers and bug bounty hunters share their expertise, real-world experiences, and insights into ethical hacking at NULLHAT Morocco 2025.</p>
             </div>
             
-            <div class="speakers-container">
-                <!-- Mouad Abid -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFQrWCibwJXXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670270529934?e=1752105600&v=beta&t=AiRk7UBq5pvTG_kKaLulzsyE88tT4Ovnrf2ZccTNLV0" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
+            <div class="speakers-container-two">
+                <div class="speaker-card-featured">
+                    <div class="speaker-image-large">
+                        <img src="images/ayoub.jpeg" 
+                            alt="Ayoub El Aich - Security Researcher" 
+                            class="speaker-img-large">
                     </div>
-                    <h3 class="speaker-name">Mouad Abid</h3>
-                    <p class="speaker-occupation">Security Researcher</p>
-                    <p class="speaker-topic">"Hook Oriented Programming"</p>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name-large">Ayoub El Aich</h3>
+                        <p class="speaker-occupation-large">Full Time Bug Bounty at HackerOne <br> AWS Expert.</p>
+                        <p class="speaker-occupation-large">HackerOne Ambassador</p>
+                        <p class="speaker-bio">Ayoub is a self-taught web application penetration tester driven by the mission to make the internet safer and more secure. Active as a full-time bug bounty hunter since 2019, he has built deep expertise in identifying and reporting vulnerabilities on global platforms. Recognized for his skills, Ayoub is ranked among the Top 5 on Morocco’s Bug Bounty Leaderboard and is also an AWS expert, combining cloud security knowledge with hands-on offensive security experience.</p>
+                    </div>
                 </div>
                 
-                <!-- Fred -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="images/Fred.jpeg"
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
+                <div class="speaker-card-featured">
+                    <div class="speaker-image-large">
+                        <img src="images/yassine.jpeg"
+                            alt="Yassine Aboukir" 
+                            class="speaker-img-large">
                     </div>
-                    <h3 class="speaker-name">Fred Charbonnier</h3>
-                    <p class="speaker-occupation">IT Specialist</p>
-                    <p class="speaker-topic">"From Fire to Firmware: Why Reverse Engineering Drives Us Forward"</p>
-                </div>
-                <!-- Akasec -->
-                <!-- <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://images.rawpixel.com/image_700/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNDEwLTEwLWJfMS5qcGc.jpg" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
+                    <div class="speaker-content">
+                        <h3 class="speaker-name-large">Yassine Aboukir</h3>
+                        <p class="speaker-occupation-large">Application security consultant.<br> Pentester at HackerOne.</p>
+                        <p class="speaker-occupation-large">HackerOne Ambassador</p>
+                        <p class="speaker-bio">Yassine is a web application penetration tester and a seasoned bug bounty hunter, active since 2014, and ranked among the Top 20 hackers worldwide on HackerOne. He has won prestigious competitions, including H1-303 Most Valuable Hacker and securing 1st place. Between 2017 and 2019, he also served as a HackerOne Triage team member, helping to secure global platforms. Yassine embraces a digital nomad lifestyle, having spent over five years traveling across more than 40 countries.</p>
                     </div>
-                    <h3 class="speaker-name">Akasec</h3>
-                    <p class="speaker-occupation">Bug Bounty Hunter</p>
-                    <p class="speaker-topic">"Bug Bounty"</p>
-                </div> -->
-                
-                <!-- Ashad -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQF8zHIieNYehw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703781787730?e=1752105600&v=beta&t=qMjf_UBuTzP_Lz-RNVvV-av3SEUDuDKIA6RBctiQpnw" 
-                        alt="Fred - Reverse Engineer" 
-                        class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Mohamed Ashad</h3>
-                    <p class="speaker-occupation">DevSecOps Engineer</p>
-                    <p class="speaker-topic">"Threat Modeling: Introduction to Secure Software Development Lifecycle"</p>
-                </div>
-                
-                <!-- Hrima -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFI61cyqfgKHA/profile-displayphoto-shrink_800_800/B4EZT5EGK9GYAc-/0/1739345391139?e=1752105600&v=beta&t=1m0hxB3j13EJUGjOmE1xR4wJZIpH916Q1LlePxL2zfw" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Mohammed Hrima</h3>
-                    <p class="speaker-occupation">Software Engineer</p>
-                    <p class="speaker-topic">"From Functions to Frameworks"</p>
-                </div>
-                <!-- Fred
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="images/Fred.jpeg"
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Fred Charbonnier</h3>
-                    <p class="speaker-occupation">IT Specialist at 42London</p>
-                    <p class="speaker-topic">"From Fire to Firmware"</p>
-                </div>
-                 -->
-                <!-- Maxime -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="images/maxime.jpeg" 
-                            alt="Pedagogy Manager at 42 Berlin" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Maxime Siffert</h3>
-                    <p class="speaker-occupation">Pedagogy Manager at 42Berlin</p>
-                    <p class="speaker-topic">"Bypassing Security: Lockpicking as an Opsec Wake-up Call"</p>
-                </div>
-            
-                  <!-- Elhoucine -->
-                  <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://cdn.intra.42.fr/users/845a8e377108c2c9ad6cd1388e6e6781/elel-yak.JPG" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">El Houcine El Yakoubi</h3>
-                    <p class="speaker-occupation">Hardware Hacking</p>
-                    <p class="speaker-topic">"Playing Tetris on The Router A UART Hardware Hacking Guide"</p>
-                </div>
-
-                <!-- Omar -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQH90-aDz8gACA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702097820017?e=1752105600&v=beta&t=Y-xazs0HKs5q4U2K7vqaTVkL6NS9vMTm9-HSZxvHGg0" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Omar El Houmadi</h3>
-                    <p class="speaker-occupation">Penetration Tester</p>
-                    <p class="speaker-topic">"Dominating the Domain: Advanced Techniques for Active Directory Compromise"</p>
-                </div>
-
-                <!-- Malik -->
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <img src="images/malik.jpg" 
-                            alt="Fred - Reverse Engineer" 
-                            class="speaker-img">
-                    </div>
-                    <h3 class="speaker-name">Malik Mouhiidine</h3>
-                    <p class="speaker-occupation">Security Engineer</p>
-                    <p class="speaker-topic">"Browser Exploitation Primer"</p>
                 </div>
             </div>
         </div>
@@ -1177,7 +1989,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Event Schedule</h2>
-                <p class="section-subtitle">Plan your Hack The Box Meetup experience</p>
+                <p class="section-subtitle">Plan your NULLHAT Morocco 2025 experience</p>
                 <div class="schedule-actions">
                     <a href="#" class="btn-outline btn-calendar" id="addToCalendar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
@@ -1187,200 +1999,110 @@
             </div>
             
             <div class="schedule-day">
-                <h3 class="day-title">Day 1 <span>(May 17)</span> - Talks, Workshops & Bootcamp</h3>
+                <h3 class="day-title">Day 1 <span>(October 31)</span> - Expert Talks & Live Hacking</h3>
                 
                 <div class="timeline">
                     <div class="event">
-                        <div class="event-time">08:00 AM</div>
+                        <div class="event-time">09:00 AM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Breakfast</h4>
+                            <h4 class="event-title">Check-in</h4>
+                            <p class="event-desc">Check-in at 1337 school</p>
                         </div>
                     </div>
                     
-                    <div class="event">
-                        <div class="event-time">10:00 AM</div>
+                    <!-- <div class="event">
+                        <div class="event-time">1:00 AM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Campus Tour</h4>
-                            <p class="event-desc">Explore the UM6P facilities and event venues</p>
+                            <h4 class="event-title">NULLHAT Morocco CTF Begins</h4>
+                            <p class="event-desc">8-hour Capture The Flag competition featuring Cryptography, OSINT, Web Exploitation, Pwn, Forensics, Reverse Engineering, Blockchain Security, Coding Challenges, and AI & ML Security</p>
                         </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">11:00 AM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Opening Ceremony (CCI Amphitheater)</h4>
-                            <p class="event-desc">Official welcome and introduction to the event</p>
-                        </div>
-                    </div>
+                    </div> -->
                     
                     <div class="event">
                         <div class="event-time">12:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Lunch</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">01:15 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Talk: "Hook Oriented Programming" (1337 Agora)</h4>
-                            <p class="event-desc"> Learn the new generation of anti-debugging, leveraging the constraint that only one debugger can control a process at a time</p>
+                            <h4 class="event-title">Lunch Break</h4>
+                            <p class="event-desc"> CCI Restaurant</p>
                         </div>
                     </div>
                     
                     <div class="event">
                         <div class="event-time">02:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Workshop: "Hardware Hacking" (Agora)</h4>
-                            <p class="event-desc">Hands-on exploration of hardware security vulnerabilities</p>
+                            <h4 class="event-title">Live Hacking kick-off</h4>
+                            <p class="event-desc">Welcoming Morocco’s security researchers to kick off the live hacking and start hacking </p>
                         </div>
                     </div>
                     
-                    <div class="event">
-                        <div class="event-time">02:35 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Workshop: "Lock Picking" (Agora)</h4>
-                            <p class="event-desc">Learn practical physical security skills with lock picking techniques</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">03:30 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Coffee Break</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
+                     <div class="event">
                         <div class="event-time">04:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Bootcamp Part 1: Hack The Box Dedicated Labs (E2)</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">07:00 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Dinner</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">09:00 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Games Night with LEETS EVENTS</h4>
-                            <p class="event-desc">Chill out with your friends, play games and join in on fun activities</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="schedule-day">
-                <h3 class="day-title">Day 2 <span>(May 18)</span> - Talks, Workshops & Bootcamp</h3>
-                
-                <div class="timeline">
-                    <div class="event">
-                        <div class="event-time">08:00 AM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Breakfast</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">10:00 AM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Talk: "Threat Modeling" (Agora)</h4>
-                            <p class="event-desc">an introduction to threat modeling and how it fits into building secure software from the start key concepts, practical steps, and its role in the secure software development lifecycle (SSDLC)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">10:45 AM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Talk: "Browser Exploitation Primer" (Agora)</h4>
-                            <p class="event-desc">Dive into the world of modern browser exploitation in this beginner-friendly session and explore how attackers find and exploit vulnerabilities in browsers,</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">12:00 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Lunch</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">01:30 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Talk: "From Fire to Firmware: Why Reverse Engineering Drives Us Forward" (Agora)</h4>
-                            <p class="event-desc">Exploring the evolution and importance of reverse engineering in cybersecurity</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">02:15 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Bootcamp: Hack The Box Dedicated Labs (E2)</h4>
-                            <!-- <p class="event-desc">2:15 until 19:00</p> -->
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">04:00 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Coffee Break & Networking</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">04:30 PM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Bootcamp Continuation: Hack The Box Dedicated Labs (E2)</h4>
-                            <!-- <p class="event-desc">2:15 until 19:00</p> -->
+                            <h4 class="event-title">opening ceremony</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
                         </div>
                     </div>
 
                     <div class="event">
-                        <div class="event-time">07:00 PM</div>
+                        <div class="event-time">04:30 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Dinner</h4>
+                            <h4 class="event-title">Talk by Yassine Aboukir</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
                         </div>
                     </div>
                     
                     <div class="event">
-                        <div class="event-time">08:30 PM</div>
+                        <div class="event-time">05:30 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Athletic Games with ATHLEETS</h4>
-                            <p class="event-desc">Physical activities and team sports until midnight</p>
+                            <h4 class="event-title">Talk by Ayoub El Aich</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">06:30 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Coffee Break</h4>
+                            <p class="event-desc">Connect with fellow participants and industry professionals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">07:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Dinner</h4>
+                            <p class="event-desc"> CCI Restaurant</p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">09:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Challenge Booth & Game Night</h4>
+                            <p class="event-desc">Enjoy games, test your cybersecurity skills, and win exclusive HackerOne swag at our interactive booth!</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="schedule-day">
-                <h3 class="day-title">Day 3 <span>(May 19)</span> - CTF & Closing</h3>
+                <h3 class="day-title">Day 2 <span>(November 1)</span> - CTF competition & Live hacking</h3>
                 
                 <div class="timeline">
                     <div class="event">
-                        <div class="event-time">09:00 AM</div>
+                        <div class="event-time">07:00 AM</div>
                         <div class="event-content">
                             <h4 class="event-title">Breakfast</h4>
+                            <p class="event-desc">CCI Restaurant</p>
                         </div>
                     </div>
                     
+
                     <div class="event">
-                        <div class="event-time">10:30 AM</div>
+                        <div class="event-time">08:00 AM</div>
                         <div class="event-content">
-                            <h4 class="event-title">From Functions to Frameworks" (Agora) </h4>
-                            <p class="event-desc">Learn how to think beyond existing tools and frameworks, challenge conventions, and build your own solutions from the ground up.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event">
-                        <div class="event-time">11:00 AM</div>
-                        <div class="event-content">
-                            <h4 class="event-title">Talk: "Dominating the Domain: Advanced Techniques for Active Directory Compromise" (Agora)</h4>
-                            <p class="event-desc">Deep dive into Active Directory security vulnerabilities and attack vectors</p>
+                            <h4 class="event-title">CTF competition begins</h4>
+                            <p class="event-desc">1337 school </p>
                         </div>
                     </div>
                     
@@ -1388,32 +2110,80 @@
                         <div class="event-time">12:00 PM</div>
                         <div class="event-content">
                             <h4 class="event-title">Lunch</h4>
+                            <p class="event-desc">CCI Restaurant</p>
                         </div>
                     </div>
                     
                     <div class="event">
                         <div class="event-time">01:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">CTF Competition: Hack The Box CTF (C4)</h4>
-                            <!-- <p class="event-desc">Competitive capture the flag event until 18:00</p> -->
+                            <h4 class="event-title">CTF continues</h4>
                         </div>
                     </div>
                     
                     <div class="event">
-                        <div class="event-time">06:00 PM</div>
+                        <div class="event-time">07:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Closing Ceremony</h4>
-                            <p class="event-desc">Award presentation, final remarks</p>
+                            <h4 class="event-title">Dinner</h4>
+                            <p class="event-desc">CCI Restaurant</p>
                         </div>
                     </div>
                     
                     <div class="event">
                         <div class="event-time">09:00 PM</div>
                         <div class="event-content">
-                            <h4 class="event-title">Gnawa Show with LEET MUSIC & LEETS EVENTS</h4>
-                            <p class="event-desc">Celebration with traditional Gnawa music performance, buffet</p>
+                            <h4 class="event-title">Closing Ceremony</h4>
+                            <p class="event-desc">Final remarks, Results Announcement & Awards Ceremony</p>
                         </div>
                     </div>
+
+                    <div class="event">
+                        <div class="event-time">10:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Nostalgia Night: A Musical Journey</h4>
+                            <p class="event-desc">Live musical experience featuring beloved songs from Spacetoon and iconic classics from our childhood. A celebration of community, creativity, and shared memories.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="sponsors">
+        <div class="container">
+               <center><h2>Partners & Supporters</h2> </center> 
+            
+            <!-- Official Sponsor and Partner -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Official Sponsor and Partner</h3>
+                <div class="sponsor-logos">
+                    <a href="https://www.hackerone.com" target="_blank" class="sponsor-logo-item large-sponsor">
+                        <img src="partners/hackerone.png" alt="HackerOne" class="sponsor-logo">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Co-organizers and Supporters -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Co-organizers and Supporters</h3>
+                <div class="sponsor-logos">
+                    <a href="https://www.instagram.com/sole.um6p" target="_blank" class="sponsor-logo-item">
+                        <img src="partners/sole.png" alt="UM6P-SOLE" class="sponsor-logo">
+                    </a>
+                    <a href="https://1337.ma" target="_blank" class="sponsor-logo-item">
+                        <img src="partners/1337.png" alt="1337 School" class="sponsor-logo">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Media Partner -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Media Partner</h3>
+                <div class="sponsor-logos">
+                    <a href="" target="_blank" class="sponsor-logo-item">
+                        <img src="partners/leet_frame.png" alt="Leet Frame Club" class="sponsor-logo">
+                    </a>
                 </div>
             </div>
         </div>
@@ -1427,8 +2197,8 @@
             
             <div class="venue-info">
                 <div class="venue-details">
-                    <h3>UM6P Campus</h3>
-                    <p>The Mohammed VI Polytechnic University (UM6P) offers cutting-edge facilities and technology infrastructure perfect for our cybersecurity event.</p>
+                    <h3>UM6P - 1337 Benguerir Campus</h3>
+                    <p>NULLHAT MOROCCO will be hosted at the Mohammed VI Polytechnic University (UM6P) Benguerir, offering world-class facilities for our national cybersecurity event.</p>
                     
                     <p><strong>Address:</strong><br>
                     UM6P, Lot 660, Hay Moulay Rachid<br>
@@ -1437,8 +2207,8 @@
                     <p><strong>Getting There:</strong></p>
                     <ul>
                         <li>40 minutes from Marrakech by train</li>
-                        <!-- <li>Shuttle services available from major hotels</li> -->
                         <li>Parking available on-site for attendees</li>
+                        <li>Accommodation and meals support provided for participants</li>
                     </ul>
                     
                     <!-- <p><strong>Accommodation:</strong><br>
@@ -1446,7 +2216,6 @@
                 </div>
                 
                 <div class="venue-map">
-                    <!-- Replace placeholder with actual Google Maps embed -->
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.155303556734!2d-7.938477184793073!3d32.21964908084598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdaf7a3feab1f407%3A0xbd50c8e7902ffbf9!2sMohammed%20VI%20Polytechnic%20University!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus" 
                         width="100%" 
@@ -1465,47 +2234,47 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about the event</p>
+                <p class="section-subtitle">Everything you need to know about NULLHAT Morocco 2025</p>
             </div>
             
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        What skill level is required to participate?
+                        What skill level is required for NULLHAT Morocco 2025?
                         <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        All skill levels are welcome! There will be challenges and content suitable for beginners, intermediate, and advanced participants. The bootcamp sessions will provide guidance for those new to certain topics.
+                        All skill levels are welcome! The CTF competition features challenges across multiple domains with varying difficulty levels. Expert talks will provide insights for beginners and advanced participants alike.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do I need to bring my own laptop?
+                        Do I need to bring equipment for the CTF?
                         <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        No, you do not need to bring your own laptop. All necessary equipment will be provided during the event. However, if you prefer to use your own device, feel free to bring it along.
+                        we have set up everything needed for the event, but you can bring your own laptop with your preferred tools and setup for the best CTF experience.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Will food and accommodation be provided during the event?
+                        Are meals and accommodation included?
                         <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        Yes! Breakfast, lunch, and dinner will be provided on all three days of the event as indicated in the schedule section. Accommodation is also provided for all participants.
+                        Yes! Meals will be provided during both days of the event. Accommodation support is available for participants traveling from other cities across Morocco.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Can I participate remotely?
+                        Is this event only for Moroccan university students?
                         <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        This event is designed as an in-person experience to maximize networking and hands-on activities.
+                        NULLHAT Morocco 2025 primarily targets university students from across Morocco, with invited security researchers joining for the live hacking demonstrations. This national event aims to strengthen the Moroccan cybersecurity community and foster collaboration among academic institutions and industry experts.
                     </div>
                 </div>
             </div>
@@ -1514,13 +2283,36 @@
     
     <footer>
         <div class="container">
-            <div class="footer-logo">Hosted By 1337</div>
-            <div class="footer-logo">Led and organized by The Elites Security</div>
+            <div class="footer-logo">NULLHAT MOROCCO 2025</div>
+            <div class="footer-logo">Organized by The Elite's Security</div>
+            
+            <!-- Contact Section -->
+            <div class="footer-contact">
+                <div class="contact-center">
+                    <div class="organization-info">
+                        <!-- <img src="partners/um6p.png" alt="UM6P" class="org-logo"> -->
+                        <div class="org-details">
+                            <h4>The Elite's Security</h4>
+                            <h3>Mohammed VI Polytechnic University</h3>
+                            <p class="org-address">
+                                Lot 660, Hay Moulay Rachid<br>
+                                Ben Guerir, 43150, Morocco
+                            </p>
+                            <div class="contact-emails">
+                                <a href="mailto:contact@elites3c.club" class="contact-email">contact@elites3c.club</a>
+                                <a href="mailto:info@um6p.ma" class="contact-email">info@um6p.ma</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="footer-links">
                 <a href="#about" class="footer-link">About</a>
                 <a href="#schedule" class="footer-link">Schedule</a>
                 <a href="#speakers" class="footer-link">Speakers</a>
                 <a href="#venue" class="footer-link">Venue</a>
+                <a href="#sponsors" class="footer-link">Partners</a>
             </div>
             
             <div class="social-links">
@@ -1541,14 +2333,14 @@
                 </a>
             </div>
             
-            <p class="copyright">© The Elites Security</p>
+            <p class="copyright">© 2025 The Elite's Security - Empowering Morocco's Cybersecurity Future</p>
         </div>
     </footer>
     
     <script>
         // Countdown Timer
         function updateCountdown() {
-            const eventDate = new Date('May 17, 2025 09:00:00').getTime();
+            const eventDate = new Date('October 31, 2025 09:00:00').getTime();
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
             
@@ -1688,11 +2480,11 @@
             e.preventDefault();
             
             // Create Google Calendar link
-            const startDate = '20250517';
-            const endDate = '20250520';
-            const eventTitle = 'Hack The Box Meetup 2025';
+            const startDate = '20251031';
+            const endDate = '20251102';
+            const eventTitle = 'NULLHAT Morocco 2025';
             const eventLocation = 'UM6P, Ben Guerir, Morocco';
-            const eventDetails = 'A 3-day cybersecurity experience connecting students from 42 Network campuses and UM6P';
+            const eventDetails = 'A 2-day national cybersecurity event bringing together university students from across Morocco with CTF competition and expert talks';
             
             const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
             

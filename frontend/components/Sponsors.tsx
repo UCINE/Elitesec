@@ -13,6 +13,13 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
+    name: 'UM6P-SOLE',
+    logo: '/images/sponsors/sole.png',
+    website: 'https://um6p.ma',
+    description: 'Student Organizations, Leadership and Engagement',
+    tier: 'gold'
+  },
+  {
     name: 'UM6P-1337 School',
     logo: '/images/sponsors/1337.png',
     website: 'https://1337.ma',

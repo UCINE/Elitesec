@@ -191,6 +191,26 @@ const timelineData: TimelineEntry[] = [
     />
   },
 
+  {
+    title: "International Meetup",
+    date: "June 2025",
+    description: "Hosted an international 3-day cybersecurity event that brought together students from 42 Network in Morocco and Germany and UM6P college of computing students. The event included 7 expert-led talks, hands-on technical workshops, advanced HackTheBox labs, learning sessions, a competitive CTF, and engaging social activities, and more fun activities. ",
+    content: <TimelineContent 
+      date="June 2025"
+      description="Hosted an international 3-day cybersecurity event that brought together students from 42 Network in Morocco and Germany and UM6P college of computing students. The event included 7 expert-led talks, hands-on technical workshops, advanced HackTheBox labs, learning sessions, a competitive CTF, and engaging social activities, and more fun activities. "
+      images={[
+        {
+          src: "/images/events/htbinter.jpg", // Update with your image path
+          alt: "Ensa Event Photo 1"
+        },
+        {
+          src: "/images/events/interhtb.jpg", // Update with your image path
+          alt: "Ensa Event Photo 2"
+        }
+      ]}
+    />
+  },
+
 ];
 
 const TimelineEntry = ({ 
