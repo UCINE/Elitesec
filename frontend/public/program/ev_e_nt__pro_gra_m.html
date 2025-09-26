@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NULLHAT Morocco 2025 | National Cybersecurity Event</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Code+Pro:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #B1D245;
+            --secondary-color: #B1D245;
+            --accent-color: #CC00FF;
+            --dark-bg: #272E41;
+            --text-color: #ffffff;
+            --card-bg: rgba(23, 175, 0, 0.1);
+            --card-border: rgba(38, 255, 0, 0.3);
+            --drop-text: #B1D245;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: radial-gradient(circle, rgba(255, 58, 47, 0.2) 1px, transparent 1px);
+            background-size: 30px 30px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.7));
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(13, 17, 23, 0.95);
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--text-color);
+            text-decoration: none;
+            /* font-family: 'Courier New', monospace; */
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a svg {
+            margin-right: 5px;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn.active .hamburger-line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .mobile-menu-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger-line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(13, 17, 23, 0.98);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .mobile-menu-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-nav li {
+            margin: 20px 0;
+        }
+        
+        .mobile-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .mobile-link:hover {
+            color: var(--primary-color);
+            background-color: rgba(177, 210, 69, 0.1);
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero span {
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.8;
+        }
+        
+        .event-details {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .detail-item svg {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Base font size */
+    text-align: center;
+    margin-bottom: 15px; /* Add space between buttons when they stack */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 58, 47, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    margin-left: 20px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.btn-print {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #schedule, #schedule * {
+        visibility: visible;
+    }
+    #schedule {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .btn-print, .btn-calendar, .schedule-actions {
+        display: none !important;
+    }
+}
+
+/* Responsive adjustments for tablets */
+@media screen and (max-width: 768px) {
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+        letter-spacing: 0.8px;
+    }
+    
+    .btn-outline {
+        margin-left: 15px;
+    }
+}
+
+/* Responsive adjustments for mobile phones */
+@media screen and (max-width: 480px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        display: block; /* Make buttons full width on mobile */
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .btn-outline {
+        margin-left: 0; /* Remove margin on mobile to prevent layout issues */
+        margin-top: 10px; /* Add top margin instead */
+    }
+    
+    /* Optional: Adjust container for buttons to ensure proper spacing */
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+    .btn:active {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(255, 58, 47, 0.3);
+    }
+    
+    .btn-outline:active {
+        background-color: var(--primary-color);
+        color: var(--dark-bg);
+    }
+}
+        
+        .countdown {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .countdown-value {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+        
+        .countdown-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '.';
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+        
+        .schedule-day {
+            margin-bottom: 60px;
+        }
+        
+        .day-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .day-title span {
+            color: var(--primary-color);
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .event {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .event-time {
+            flex: 0 0 100px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .event-time::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 5px;
+            right: -6px;
+        }
+        
+        .event-content {
+            flex: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-left: 40px;
+        }
+        
+        .event-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .event-speaker {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .event-desc {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .venue-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .venue-map {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+            background-color: #333;
+            border: 1px solid var(--card-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .venue-map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will cover the entire area while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Optional hover effect */
+        .venue-map:hover .venue-map-image {
+            transform: scale(1.02);
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .venue-map {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .venue-map {
+                height: 250px;
+            }
+        }
+        
+        .venue-details h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .venue-details p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .venue-details ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .venue-details li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .venue-details li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            line-height: 1;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-icon {
+            color: var(--text-color);
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Contact Section Styles */
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-center {
+            text-align: center;
+        }
+        
+        .organization-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .org-logo {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .org-logo:hover {
+            background-color: rgba(177, 210, 69, 0.1);
+            border-color: rgba(177, 210, 69, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .org-details h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+        }
+        
+        .org-details h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .contact-emails {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .contact-email {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            color: var(--primary-color);
+            opacity: 1;
+        }
+        
+        .org-address {
+            font-size: 13px;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-contact {
+                margin: 30px auto;
+                padding: 20px 0;
+            }
+            
+            .organization-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .org-logo {
+                width: 100px;
+                height: 70px;
+                padding: 12px;
+            }
+            
+            .org-details h3 {
+                font-size: 16px;
+            }
+            
+            .org-details h4 {
+                font-size: 14px;
+            }
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.5;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .event-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .countdown {
+                gap: 15px;
+            }
+            
+            .countdown-value {
+                font-size: 36px;
+            }
+            
+            .venue-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Matrix code rain effect */
+        .code-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.2;
+            background: linear-gradient(to bottom, transparent, rgba(13, 17, 23, 0.9) 85%);
+        }
+        
+        .code-column {
+            position: absolute;
+            top: -100px;
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--drop-text);
+            text-shadow: 0 0 8px var(--drop-text);
+            white-space: nowrap;
+            transform: translateY(0);
+            animation: rain linear infinite;
+        }
+
+        @keyframes rain {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(calc(100vh + 100px));
+            }
+        }
+
+        /* Logo section styling */
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        
+        .logo-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            width: 150px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 58, 47, 0.3);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Speakers section styling - updated circular layout */
+        .speakers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .speaker-card {
+            text-align: center;
+            transition: all 0.4s ease;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 30px 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px;
+            margin: 25px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: rotate(0deg);
+        }
+
+        .speaker-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+        
+        .speaker-card:nth-child(even) {
+            transform: rotate(2deg);
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-15px) rotate(0deg);
+            box-shadow: 0 15px 30px rgba(255, 58, 47, 0.2);
+            background-color: rgba(255, 58, 47, 0.15);
+            z-index: 10;
+        }
+
+        .speaker-image {
+            width: 100%;
+            aspect-ratio: 1/1; /* Creates a perfect square */
+            border-radius: 50%; /* Makes it circular */
+            overflow: hidden;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--card-bg);
+        }
+
+        .speaker-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the entire area */
+            display: block;
+        }
+
+        /* Optional: Add a subtle hover effect */
+        .speaker-card:hover .speaker-img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Optional: Add fallback styling in case the image fails to load */
+        .speaker-img::after {
+            content: "FR";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            opacity: 0;
+        }
+
+        .speaker-img:not([src]), .speaker-img[src=""], .speaker-img[src="#"] {
+            display: none;
+        }
+
+        .speaker-img:not([src]) + .speaker-img::after, 
+        .speaker-img[src=""] + .speaker-img::after, 
+        .speaker-img[src="#"] + .speaker-img::after {
+            opacity: 1;
+        }
+
+        .speaker-card:hover .speaker-image {
+            transform: scale(1.1);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(255, 58, 47, 0.05) 0%, rgba(255, 58, 47, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .placeholder-image::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle, transparent 30%, rgba(255, 58, 47, 0.1) 100%);
+            opacity: 0.7;
+        }
+
+        .speaker-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+        }
+
+        .speaker-occupation {
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .speaker-topic {
+            font-style: italic;
+            font-size: 14px;
+            opacity: 0.8;
+            padding: 0 10px;
+            line-height: 1.4;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        /* Circular orbit position effect */
+        .speakers-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 450px;
+            height: 450px;
+            border: 2px dashed rgba(255, 58, 47, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        /* Position speakers in a more circular pattern */
+        .speaker-card:nth-child(1) { margin-left: 60px; }
+        .speaker-card:nth-child(2) { margin-right: 40px; }
+        .speaker-card:nth-child(3) { margin-top: -30px; }
+        .speaker-card:nth-child(4) { margin-left: 20px; margin-right: 20px; }
+        .speaker-card:nth-child(5) { margin-top: -20px; }
+        .speaker-card:nth-child(6) { margin-right: 50px; }
+        .speaker-card:nth-child(7) { margin-left: 30px; margin-top: -15px; }
+        .speaker-card:nth-child(8) { margin-top: -25px; }
+
+        @media (max-width: 768px) {
+            .speakers-container::before {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .speaker-card {
+                width: 180px;
+                margin: 15px;
+                padding: 20px 10px 15px;
+            }
+            
+            .speaker-image {
+                width: 130px;
+                height: 130px;
+                margin-bottom: 15px;
+            }
+            
+            .speaker-name {
+                font-size: 18px;
+            }
+            
+            /* Reset positioning on mobile */
+            .speaker-card:nth-child(n) {
+                margin: 15px;
+            }
+        }
+
+        /* Additional animation for speakers section */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .section-title#speakers-title {
+            animation: pulse 3s infinite;
+            position: relative;
+        }
+
+        /* New 2-speaker featured layout */
+        .speakers-container-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .speaker-card-featured {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .speaker-card-featured:hover::before {
+            left: 100%;
+        }
+
+        .speaker-card-featured:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(177, 210, 69, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .speaker-image-large {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .speaker-card-featured:hover .speaker-image-large {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .speaker-img-large {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .speaker-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .speaker-name-large {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .speaker-occupation-large {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .speaker-topic-large {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .speaker-bio {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .speakers-container-two {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+            
+            .speaker-card-featured {
+                padding: 30px 20px;
+            }
+            
+            .speaker-image-large {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+            }
+            
+            .speaker-name-large {
+                font-size: 24px;
+            }
+            
+            .speaker-topic-large {
+                font-size: 16px;
+            }
+        }
+
+        /* NULLHAT Showcase Styling - Similar to Live Hacking */
+        .nullhat-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            align-items: center;
+        }
+
+        .nullhat-main {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nullhat-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(177, 210, 69, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nullhat-main:hover::before {
+            opacity: 1;
+        }
+
+        .nullhat-icon {
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-main:hover .nullhat-icon {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        .nullhat-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .nullhat-tagline {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .nullhat-description {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .nullhat-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .nullhat-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-feature-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(177, 210, 69, 0.15);
+        }
+
+        .nullhat-feature-icon {
+            font-size: 24px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nullhat-feature-item:hover .nullhat-feature-icon {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .nullhat-feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .nullhat-feature-content p {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .nullhat-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+
+            .nullhat-main {
+                padding: 30px 20px;
+            }
+
+            .nullhat-title {
+                font-size: 24px;
+            }
+
+            .nullhat-feature-item {
+                padding: 15px;
+            }
+        }
+
+        /* CTF Section Styling */
+        .ctf-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .ctf-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ctf-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .ctf-card:hover::before {
+            left: 100%;
+        }
+
+        .ctf-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(177, 210, 69, 0.2);
+        }
+
+        .ctf-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+            filter: grayscale(0.3);
+            transition: all 0.3s ease;
+        }
+
+        .ctf-card:hover .ctf-icon {
+            transform: scale(1.1);
+            filter: grayscale(0);
+        }
+
+        .ctf-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .ctf-description {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Live Hacking Section Styling */
+        .live-hacking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            align-items: center;
+        }
+
+        .live-hacking-main {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(177, 210, 69, 0.05) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .live-hacking-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(177, 210, 69, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .live-hacking-main:hover::before {
+            opacity: 1;
+        }
+
+        .live-hacking-icon {
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .live-hacking-main:hover .live-hacking-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .live-hacking-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .live-hacking-description {
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .live-hacking-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(177, 210, 69, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(177, 210, 69, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .ctf-categories {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .ctf-card {
+                padding: 25px 20px;
+            }
+
+            .ctf-icon {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            .ctf-title {
+                font-size: 20px;
+            }
+
+            .live-hacking-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+            }
+
+            .live-hacking-main {
+                padding: 30px 20px;
+            }
+
+            .live-hacking-title {
+                font-size: 24px;
+            }
+
+            .feature-item {
+                padding: 15px;
+            }
+        }
+
+        /* FAQ section styling */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(255, 58, 47, 0.2);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Sponsors & Partners Section Styling */
+        .sponsor-category {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .sponsor-category-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .sponsor-logo-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            width: 280px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .sponsor-logo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(177, 210, 69, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .sponsor-logo-item:hover::before {
+            left: 100%;
+        }
+
+        .sponsor-logo-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(177, 210, 69, 0.2);
+            background-color: rgba(177, 210, 69, 0.05);
+        }
+
+        .large-sponsor {
+            min-width: 300px;
+            min-height: 150px;
+            padding: 40px;
+        }
+
+        .sponsor-logo {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .large-sponsor .sponsor-logo {
+            max-height: 100px;
+        }
+
+        .sponsor-logo-item:hover .sponsor-logo {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+        
+        /* Specific scaling for SOLE and 1337 logos */
+        img[alt="UM6P-SOLE"], img[alt="1337 School"] {
+            transform: scale(1.3);
+        }
+
+        @media (max-width: 768px) {
+            .sponsor-category {
+                margin-bottom: 40px;
+            }
+
+            .sponsor-category-title {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            .sponsor-logos {
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .sponsor-logo-item {
+                width: 280px;
+                height: 120px;
+                padding: 20px;
+            }
+
+            .large-sponsor {
+                min-width: 280px;
+                min-height: 120px;
+                padding: 30px;
+            }
+
+            .sponsor-logo {
+                max-height: 60px;
+            }
+
+            .large-sponsor .sponsor-logo {
+                max-height: 80px;
+            }
+            
+            /* Reduce scaling for SOLE and 1337 logos on mobile */
+            img[alt="UM6P-SOLE"], img[alt="1337 School"] {
+                transform: scale(1.1);
+            }
+            
+            /* Footer links mobile styling */
+            .footer-links {
+                gap: 15px !important;
+                margin-bottom: 25px !important;
+                padding: 0 15px !important;
+                display: flex !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .footer-link {
+                font-size: 16px !important;
+                opacity: 1 !important;
+                padding: 10px 15px !important;
+                background-color: rgba(255, 255, 255, 0.1) !important;
+                border-radius: 8px !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                display: inline-block !important;
+                margin: 2px !important;
+            }
+        }
+
+        /* Additional mobile media query for very small screens */
+        @media (max-width: 480px) {
+            .footer-links {
+                gap: 10px !important;
+                padding: 0 10px !important;
+            }
+            
+            .footer-link {
+                font-size: 14px !important;
+                padding: 8px 12px !important;
+            }
+        }
+
+        /* Added schedule actions styling */
+        .schedule-actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .btn-calendar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-calendar:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 58, 47, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .btn-calendar {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <!-- Add to your head section -->
+    <link rel="preconnect" href="https://media.licdn.com">
+    <link rel="preload" href="images/event_program.jpeg" as="image">
+    <link rel="preload" href="images/Fred.jpeg" as="image">
+    <link rel="preload" href="images/maxime.jpeg" as="image">
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    
+    <header>
+        <div class="container header-container">
+            <a href="#hero" class="logo">The Elites' Security<span>.</span></a>
+            
+            <!-- Mobile hamburger button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg> About</a></li>
+                    <li><a href="#schedule"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Schedule</a></li>
+                    <li><a href="#speakers"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Speakers</a></li>
+                    <li><a href="#sponsors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Partners</a></li>
+                    <li><a href="#venue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Venue</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile menu overlay -->
+            <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="#about" class="mobile-link">About</a></li>
+                        <li><a href="#schedule" class="mobile-link">Schedule</a></li>
+                        <li><a href="#speakers" class="mobile-link">Speakers</a></li>
+                        <li><a href="#sponsors" class="mobile-link">Partners</a></li>
+                        <li><a href="#venue" class="mobile-link">Venue</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>NULLHAT MOROCCO<span>.</span></h1>
+            <p>NULL HAT is more than just a cybersecurity event, it’s a mindset. In the world of hacking, people are often labeled as white hats, black hats, or gray hats. But at NULL HAT, we believe hacking is not about the color of your hat, it’s about intent, creativity, and exploration.<br>
+            it’s a place with No labels, No ego, and No assumptions just an opportunity to learn, experiment, and grow. NULL HAT is an open space where university students come together to discover cybersecurity, share ideas, and build the skills that will shape the future of digital security in Morocco.</p>
+            
+            <div class="event-details">
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    October 31 - November 1, 2025
+                </div>
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    UM6P-1337, Ben Guerir Campus
+                </div>
+            </div>
+            
+            <!-- Added logos section
+            <div class="logos-container">
+                <div class="logo-item">
+                    <span>Hack The Box</span>
+                </div>
+                <div class="logo-item">
+                    <span>UM6P</span>
+                </div>
+                <div class="logo-item">
+                    <span>1337</span>
+                </div>
+                <div class="logo-item">
+                    <span>42 Network</span>
+                </div>
+                <div class="logo-item">
+                    <span>ElitSec Club</span>
+                </div>
+            </div> -->
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <a href="#about" class="btn">Learn More</a>
+            <a href="#schedule" class="btn btn-outline">View Schedule</a>
+        </div>
+    </section>
+    
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT NULLHAT MOROCCO</h2>
+                <p class="section-subtitle"><p>NULLHAT Morocco is a national cybersecurity event that brings together university students and security researchers for collaboration, learning, competition, and live hacking. Over two days, participants will dive into expert talks, a high-stakes CTF, and hands-on hacking experiences alongside professionals, making it a unique space where knowledge meets practice.</p>
+            </div>
+            
+            <div class="venue-info">
+                <div class="venue-details">
+                    <h3>Empowering Morocco's Cybersecurity Future</h3>
+                    <p>NULLHAT Morocco 2025 is designed to create a lasting impact on Morocco's cybersecurity landscape, bringing together university students nationwide for an intensive learning experience. Our strategic objectives include:</p>
+                    
+                    <ul >
+                        <li><strong>Empower students with high-quality cybersecurity challenges</strong> crafted from The Elite’s Security content.</li>
+                        <li><strong>Strengthen national collaboration</strong> among Moroccan universities and institutions</li>
+                        <li><strong>Raise cybersecurity awareness</strong> highlighting its importance for academic and professional growth</li>
+                        <li><strong>Expose students to professional tools</strong> and methodologies used in the cybersecurity field</li>
+                        <li><strong>Feature HackerOne partnership</strong> bringing global cybersecurity standards to Morocco</li>
+                        <li><strong>Host live hacking demonstration</strong> showcasing real-world security research</li>
+                    </ul>
+                </div>
+                
+                <div class="nullhat-showcase">
+                    <div class="nullhat-main">
+                        <div class="nullhat-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="#B1D245" stroke-width="2"/>
+                                <path d="M8 12h8M12 8v8" stroke="#B1D245" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="12" r="3" fill="#B1D245" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <h3 class="nullhat-title">NULLHAT MOROCCO</h3>
+                        <!-- <p class="nullhat-tagline">No Labels • No Ego • No Assumptions</p> -->
+                        <!-- <p class="nullhat-description">
+                            An open space where university students discover cybersecurity, share ideas, and build skills that will shape Morocco's digital security future.
+                        </p> -->
+                    </div>
+                    
+                    <div class="nullhat-features">
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🎯</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Skill Development</h4>
+                                <p>Hands-on learning through challenging CTF competitions and expert guidance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🤝</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Community Building</h4>
+                                <p>Connect with like-minded cybersecurity enthusiasts from across Morocco</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🚀</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Innovation Hub</h4>
+                                <p>Foster creativity and exploration in ethical hacking and security research</p>
+                            </div>
+                        </div>
+                        
+                        <div class="nullhat-feature-item">
+                            <div class="nullhat-feature-icon">🌍</div>
+                            <div class="nullhat-feature-content">
+                                <h4>Global Standards</h4>
+                                <p>Learn from industry professionals and HackerOne partnership experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="ctf">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ELITESEC COMPETITION</h2>
+                <p class="section-subtitle">Test your skills across 8 challenging cybersecurity domains in our flagship Capture The Flag competition</p>
+            </div>
+            
+            <div class="ctf-categories">
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔐</div>
+                    <h3 class="ctf-title">Cryptography</h3>
+                    <p class="ctf-description">Break ciphers, analyze encryption algorithms, and uncover hidden messages through mathematical cryptanalysis.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">💥</div>
+                    <h3 class="ctf-title">PWN</h3>
+                    <p class="ctf-description">Exploit memory corruption vulnerabilities, buffer overflows, and system-level security flaws.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔄</div>
+                    <h3 class="ctf-title">Reverse Engineering</h3>
+                    <p class="ctf-description">Disassemble binaries, analyze malware, and understand program logic through reverse engineering techniques and tools.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🧩</div>
+                    <h3 class="ctf-title">Misc</h3>
+                    <p class="ctf-description">Solve creative puzzles, logic challenges, and unconventional problems that test lateral thinking.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🌐</div>
+                    <h3 class="ctf-title">Web</h3>
+                    <p class="ctf-description">Test and challenge the security of web applications through practical, hands-on scenarios.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🔍</div>
+                    <h3 class="ctf-title">Forensics</h3>
+                    <p class="ctf-description">Analyze digital evidence, recover hidden data, and investigate security incidents like a digital detective.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🤖</div>
+                    <h3 class="ctf-title">AI/ML</h3>
+                    <p class="ctf-description">Attack machine learning models, manipulate AI systems, and explore adversarial artificial intelligence.</p>
+                </div>
+                
+                <div class="ctf-card">
+                    <div class="ctf-icon">🕵️</div>
+                    <h3 class="ctf-title">OSINT</h3>
+                    <p class="ctf-description">Gather intelligence from open sources, trace digital footprints, and uncover hidden information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="live-hacking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Live Hacking Experience</h2>
+                <p class="section-subtitle">Witness professional security research in action</p>
+            </div>
+            
+            <div class="live-hacking-content">
+                <div class="live-hacking-main">
+                    <div class="live-hacking-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#B1D245"/>
+                            <circle cx="12" cy="12" r="3" fill="none" stroke="#B1D245" stroke-width="2"/>
+                            <path d="M12 1V5M12 19V23M23 12H19M5 12H1" stroke="#B1D245" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="live-hacking-title">Real-Time Security Research</h3>
+                    <p class="live-hacking-description">
+                        Experience the thrill of live ethical hacking during a comprehensive 7-day program: 5 days online followed by 2 days onsite at UM6P. Morocco's bug hunters demonstrate real-world vulnerability discovery and exploitation, while participants get an exceptional opportunity to meet with HackerOne ambassadors who will review their reports and provide expert guidance before submission. This groundbreaking session showcases professional penetration testing methodologies in action.
+                    </p>
+                </div>
+                
+                <div class="live-hacking-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h4>Live Vulnerability Discovery</h4>
+                            <p>Watch experts identify and exploit real security flaws in real-time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🔴</div>
+                        <div class="feature-content">
+                            <h4>Professional Tools & Techniques</h4>
+                            <p>Learn industry-standard methodologies used by top security researchers</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div class="feature-content">
+                            <h4>HackerOne Partnership</h4>
+                            <p>Powered by global leaders in ethical hacking and security research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="speakers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="speakers-title">Expert Speakers</h2>
+                <p class="section-subtitle">Top Moroccan cybersecurity researchers and bug bounty hunters share their expertise, real-world experiences, and insights into ethical hacking at NULLHAT Morocco 2025.</p>
+            </div>
+            
+            <div class="speakers-container-two">
+                <div class="speaker-card-featured">
+                    <div class="speaker-image-large">
+                        <img src="images/ayoub.jpeg" 
+                            alt="Ayoub El Aich - Security Researcher" 
+                            class="speaker-img-large">
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name-large">Ayoub El Aich</h3>
+                        <p class="speaker-occupation-large">Full Time Bug Bounty at HackerOne <br> AWS Expert.</p>
+                        <p class="speaker-occupation-large">HackerOne Ambassador</p>
+                        <p class="speaker-bio">Ayoub is a self-taught web application penetration tester driven by the mission to make the internet safer and more secure. Active as a full-time bug bounty hunter since 2019, he has built deep expertise in identifying and reporting vulnerabilities on global platforms. Recognized for his skills, Ayoub is ranked among the Top 5 on Morocco’s Bug Bounty Leaderboard and is also an AWS expert, combining cloud security knowledge with hands-on offensive security experience.</p>
+                    </div>
+                </div>
+                
+                <div class="speaker-card-featured">
+                    <div class="speaker-image-large">
+                        <img src="images/yassine.jpeg"
+                            alt="Yassine Aboukir" 
+                            class="speaker-img-large">
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name-large">Yassine Aboukir</h3>
+                        <p class="speaker-occupation-large">Application security consultant.<br> Pentester at HackerOne.</p>
+                        <p class="speaker-occupation-large">HackerOne Ambassador</p>
+                        <p class="speaker-bio">Yassine is a web application penetration tester and a seasoned bug bounty hunter, active since 2014, and ranked among the Top 20 hackers worldwide on HackerOne. He has won prestigious competitions, including H1-303 Most Valuable Hacker and securing 1st place. Between 2017 and 2019, he also served as a HackerOne Triage team member, helping to secure global platforms. Yassine embraces a digital nomad lifestyle, having spent over five years traveling across more than 40 countries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Event Schedule</h2>
+                <p class="section-subtitle">Plan your NULLHAT Morocco 2025 experience</p>
+                <div class="schedule-actions">
+                    <a href="#" class="btn-outline btn-calendar" id="addToCalendar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
+                        Add to Calendar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="schedule-day">
+                <h3 class="day-title">Day 1 <span>(October 31)</span> - Expert Talks & Live Hacking</h3>
+                
+                <div class="timeline">
+                    <div class="event">
+                        <div class="event-time">09:00 AM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Check-in</h4>
+                            <p class="event-desc">Check-in at 1337 school</p>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="event">
+                        <div class="event-time">1:00 AM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">NULLHAT Morocco CTF Begins</h4>
+                            <p class="event-desc">8-hour Capture The Flag competition featuring Cryptography, OSINT, Web Exploitation, Pwn, Forensics, Reverse Engineering, Blockchain Security, Coding Challenges, and AI & ML Security</p>
+                        </div>
+                    </div> -->
+                    
+                    <div class="event">
+                        <div class="event-time">12:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Lunch Break</h4>
+                            <p class="event-desc"> CCI Restaurant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">03:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Live Hacking kick-off</h4>
+                            <p class="event-desc">Welcoming Morocco’s security researchers to kick off the live hacking</p>
+                        </div>
+                    </div>
+                    
+                     <div class="event">
+                        <div class="event-time">04:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">opening ceremony</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">04:30 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Talk by Yassine Aboukir</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">05:30 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Talk by Ayoub El Aich</h4>
+                            <p class="event-desc"> CCI amphitheater Next to 1337 school</p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">06:30 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Coffee Break</h4>
+                            <p class="event-desc">Connect with fellow participants and industry professionals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">07:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Dinner</h4>
+                            <p class="event-desc"> CCI Restaurant</p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">09:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Challenge Booth & Game Night</h4>
+                            <p class="event-desc">Enjoy games, test your cybersecurity skills, and win exclusive HackerOne swag at our interactive booth!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-day">
+                <h3 class="day-title">Day 2 <span>(November 1)</span> - CTF competition & Live hacking</h3>
+                
+                <div class="timeline">
+                    <div class="event">
+                        <div class="event-time">07:00 AM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Breakfast</h4>
+                            <p class="event-desc">CCI Restaurant</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="event">
+                        <div class="event-time">08:00 AM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">CTF competition begins</h4>
+                            <p class="event-desc">1337 school </p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">09:00 AM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Live Hacking continues</h4>
+                            <p class="event-desc">Learning center first floor </p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">12:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Lunch</h4>
+                            <p class="event-desc">CCI Restaurant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">01:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">CTF continues</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="event">
+                        <div class="event-time">07:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Dinner</h4>
+                            <p class="event-desc">CCI Restaurant</p>
+                        </div>
+                    </div>
+                    
+                     <div class="event">
+                        <div class="event-time">08:30 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Ask the Hackers: Students Q&A Session</h4>
+                            <p class="event-desc">An open conversation between students and experienced bug bounty hunters.  
+            A chance to ask questions, gain insights, and learn from real-world stories in ethical hacking.</p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">09:15 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Closing Ceremony</h4>
+                            <p class="event-desc">Final remarks, Results Announcement & Awards Ceremony</p>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-time">10:00 PM</div>
+                        <div class="event-content">
+                            <h4 class="event-title">Nostalgia Night: A Musical Journey</h4>
+                            <p class="event-desc">Live musical experience featuring beloved songs from Spacetoon and iconic classics from our childhood. A celebration of community, creativity, and shared memories.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="sponsors">
+        <div class="container">
+               <center><h2>Partners & Supporters</h2> </center> 
+            
+            <!-- Official Sponsor and Partner -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Official Sponsor and Partner</h3>
+                <div class="sponsor-logos">
+                    <a href="https://www.hackerone.com" target="_blank" class="sponsor-logo-item large-sponsor">
+                        <img src="partners/hackerone.png" alt="HackerOne" class="sponsor-logo">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Co-organizers and Supporters -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Co-organizers and Supporters</h3>
+                <div class="sponsor-logos">
+                    <a href="https://www.instagram.com/sole.um6p" target="_blank" class="sponsor-logo-item large-sponsor">
+                        <img src="partners/sole.png" alt="UM6P-SOLE" class="sponsor-logo">
+                    </a>
+                    <a href="https://1337.ma" target="_blank" class="sponsor-logo-item large-sponsor">
+                        <img src="partners/1337.png" alt="1337 School" class="sponsor-logo">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Media Partner -->
+            <div class="sponsor-category">
+                <h3 class="sponsor-category-title">Media Partner</h3>
+                <div class="sponsor-logos">
+                    <a href="" target="_blank" class="sponsor-logo-item">
+                        <img src="partners/leet_frame.png" alt="Leet Frame Club" class="sponsor-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="venue">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Venue Information</h2>
+            </div>
+            
+            <div class="venue-info">
+                <div class="venue-details">
+                    <h3>UM6P - 1337 Benguerir Campus</h3>
+                    <p>NULLHAT MOROCCO will be hosted at the Mohammed VI Polytechnic University (UM6P) Benguerir, offering world-class facilities for our national cybersecurity event.</p>
+                    
+                    <p><strong>Address:</strong><br>
+                    UM6P, Lot 660, Hay Moulay Rachid<br>
+                    Ben Guerir, 43150, Morocco</p>
+                    
+                    <p><strong>Getting There:</strong></p>
+                    <ul>
+                        <li>40 minutes from Marrakech by train</li>
+                        <li>Parking available on-site for attendees</li>
+                        <li>Accommodation and meals support provided for participants</li>
+                    </ul>
+                    
+                    <!-- <p><strong>Accommodation:</strong><br>
+                    .</p> -->
+                </div>
+                
+                <div class="venue-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.155303556734!2d-7.938477184793073!3d32.21964908084598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdaf7a3feab1f407%3A0xbd50c8e7902ffbf9!2sMohammed%20VI%20Polytechnic%20University!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about NULLHAT Morocco 2025</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What skill level is required for NULLHAT Morocco 2025?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        All skill levels are welcome! The CTF competition features challenges across multiple domains with varying difficulty levels. Expert talks will provide insights for beginners and advanced participants alike. In addition, live hacking sessions with the experienced Moroccan bug bounty community will give participants the chance to learn, collaborate, and gain hands-on experience.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to bring equipment for the CTF?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        we have set up everything needed for the event, but you can bring your own laptop with your preferred tools and setup for the best CTF experience.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are meals and accommodation included?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Meals will be provided during both days of the event. Accommodation support is available for participants traveling from other cities across Morocco.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is this event only for Moroccan university students?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        NULLHAT Morocco 2025 primarily targets university students from across Morocco, with invited bug hunters joining for the live hacking demonstrations. This national event aims to strengthen the Moroccan cybersecurity community and foster collaboration among academic institutions and industry experts.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">NULLHAT MOROCCO 2025</div>
+            <div class="footer-logo">Organized by The Elite's Security</div>
+            
+            <!-- Contact Section -->
+            <div class="footer-contact">
+                <div class="contact-center">
+                    <div class="organization-info">
+                        <!-- <img src="partners/um6p.png" alt="UM6P" class="org-logo"> -->
+                        <div class="org-details">
+                            <h4>The Elite's Security</h4>
+                            <h3>Mohammed VI Polytechnic University</h3>
+                            <p class="org-address">
+                                Lot 660, Hay Moulay Rachid<br>
+                                Ben Guerir, 43150, Morocco
+                            </p>
+                            <div class="contact-emails">
+                                <a href="mailto:contact@elites3c.club" class="contact-email">contact@elites3c.club</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#about" class="footer-link">About</a>
+                <a href="#schedule" class="footer-link">Schedule</a>
+                <a href="#speakers" class="footer-link">Speakers</a>
+                <a href="#venue" class="footer-link">Venue</a>
+                <a href="#sponsors" class="footer-link">Partners</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://x.com/thelitesecurity" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/elitesec42" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/the-elites-security/" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/thelitesecurity" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://elites3c.club" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </a>
+            </div>
+            
+            <p class="copyright">© 2025 The Elite's Security - Empowering Morocco's Cybersecurity Future</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('October 31, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown-days').innerText = days.toString().padStart(2, '0');
+                document.getElementById('countdown-hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('countdown-seconds').innerText = seconds.toString().padStart(2, '0');
+            }
+        }
+
+        // Initialize countdown
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Matrix code rain effect with vertical shell commands
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const width = window.innerWidth;
+            codeRain.innerHTML = ''; // Clear existing columns on resize
+            
+            // Characters for the code rain (cybersecurity related terms and shell commands)
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?/~`";
+            
+            // Security terms that will display one character per line
+            const securityTerms = ["HACK", "SECURE", "BREACH", "CTF", "CYBER", "EXPLOIT", "FIREWALL", 
+                                "MALWARE", "PAYLOAD", "PHISHING", "ROOT", "SHELL", "TOKEN", "VIRUS"];
+            
+            // Shell commands that will display one character per line
+            const shellCommands = ["ls -la", "chmod +x", "cat /etc/passwd", "sudo su", "nmap -sV",
+                                "ssh root@", "./exploit", "grep -r", "ps aux"];
+            
+            // Create fewer columns for less density
+            const columnCount = Math.min(50, Math.floor(width / 40)); // Reduced density
+            
+            for (let i = 0; i < columnCount; i++) {
+                const column = document.createElement('div');
+                column.className = 'code-column';
+                
+                // Random position
+                column.style.left = Math.random() * width + 'px';
+                
+                // Slower animation for better readability
+                const speed = 3 + Math.random() * 6;
+                column.style.animationDuration = speed + 's';
+                
+                // Generate shorter random code string
+                let codeString = '';
+                const length = 10 + Math.floor(Math.random() * 25); // Shorter strings
+                
+                for (let j = 0; j < length; j++) {
+                    const rand = Math.random();
+                    
+                    if (rand < 0.05 && securityTerms.length > 0) { // Security terms
+                        const term = securityTerms[Math.floor(Math.random() * securityTerms.length)];
+                        // Display each character of the term on a new line
+                        for (let k = 0; k < term.length; k++) {
+                            codeString += term[k] + '<br>';
+                        }
+                        j += term.length - 1;
+                    } 
+                    else if (rand < 0.10 && shellCommands.length > 0) { // Shell commands
+                        const cmd = shellCommands[Math.floor(Math.random() * shellCommands.length)];
+                        // Display each character of the command on a new line with special color
+                        codeString += '<span style="color: #272E41;">';
+                        for (let k = 0; k < cmd.length; k++) {
+                            codeString += cmd[k] + '<br>';
+                        }
+                        codeString += '</span>';
+                        j += cmd.length - 1;
+                    } 
+                    else {
+                        codeString += chars[Math.floor(Math.random() * chars.length)] + '<br>';
+                    }
+                }
+                
+                column.innerHTML = codeString;
+                codeRain.appendChild(column);
+            }
+        }
+
+        // Initialize code rain
+        createCodeRain();
+
+        // Recreate rain effect on window resize
+        window.addEventListener('resize', createCodeRain);
+
+        // Make the code rain fade as you scroll down
+        document.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const pageHeight = document.body.scrollHeight - viewportHeight;
+            const codeRain = document.getElementById('codeRain');
+            
+            // Calculate opacity based on scroll position
+            const maxOpacity = 0.3; // Starting opacity
+            const minOpacity = 0.03; // Minimum opacity when scrolled down
+            
+            if (pageHeight > 0) {
+                const opacity = maxOpacity - (scrollPosition / pageHeight) * (maxOpacity - minOpacity);
+                codeRain.style.opacity = Math.max(opacity, minOpacity);
+            }
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Add to Calendar functionality
+        document.getElementById('addToCalendar').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create Google Calendar link
+            const startDate = '20251031';
+            const endDate = '20251102';
+            const eventTitle = 'NULLHAT Morocco 2025';
+            const eventLocation = 'UM6P, Ben Guerir, Morocco';
+            const eventDetails = 'A 2-day national cybersecurity event bringing together university students from across Morocco with CTF competition and expert talks';
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
