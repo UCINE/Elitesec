@@ -5,6 +5,7 @@ import About from "@/components/About";
 import dynamic from "next/dynamic";
 import FAQ from '../components/FAQ';
 import Announcement from "@/components/Announcement";
+import KeyRingValidation from "@/components/KeyRingValidation";
 
 // Import components lazily to improve initial load performance
 // const Newsletter = dynamic(() => import("@/components/sections/Newsletter"), {
@@ -36,6 +37,7 @@ export default function Home() {
     <div className="">
       <NavBar />
       <Header />
+      <KeyRingValidation />
       <About />
       <Timeline />
       <Blog />
