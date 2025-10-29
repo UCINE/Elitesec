@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { VALID_IDS } from './valid-ids';
 
 // In-memory store for used IDs (in production, use a database)
+// This resets on every deployment
 const usedIds = new Set<string>();
 
 // Rate limiting storage
