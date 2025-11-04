@@ -224,7 +224,7 @@ export function NavBar() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex items-center justify-center w-12 h-12 bg-red-500 rounded-full shadow-lg z-20"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-red-500 shadow-xl shadow-red-900/40 transition-transform duration-200 hover:scale-105 active:scale-95 z-20"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -249,7 +249,7 @@ export function NavBar() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="bg-zinc-900/80 backdrop-blur-md px-4 py-1 rounded-full text-sm text-red-500 font-medium shadow-lg mt-2"
+                    className="px-4 py-1 mt-2 text-sm font-medium text-red-500 bg-black/75 rounded-full shadow-lg"
                   >
                     {activeTab}
                   </motion.div>
@@ -264,7 +264,7 @@ export function NavBar() {
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    className="bg-zinc-900/95 backdrop-blur-lg border border-zinc-800 rounded-2xl p-4 shadow-xl w-full max-w-xs mb-4"
+                    className="w-full max-w-xs p-4 mb-4 bg-black/90 border border-red-500/10 rounded-2xl shadow-2xl backdrop-blur"
                   >
                     <div className="grid grid-cols-3 gap-2">
                       {navItems.map((item) => {
@@ -277,13 +277,15 @@ export function NavBar() {
                             href={item.url}
                             onClick={(e) => handleClick(e, item)}
                             className={cn(
-                              "flex flex-col items-center justify-center p-3 rounded-xl transition-all",
-                              isActive ? "bg-red-500/10 text-red-500" : "text-zinc-400 hover:bg-zinc-800"
+                              "group flex flex-col items-center justify-center p-3 rounded-xl transition-transform duration-200",
+                              isActive
+                                ? "bg-red-500/15 text-red-100"
+                                : "text-zinc-300 hover:text-white hover:bg-white/5"
                             )}
                             aria-current={isActive ? "page" : undefined}
                           >
-                            <Icon size={24} strokeWidth={2} />
-                            <span className="text-xs mt-1">{item.name}</span>
+                            <Icon size={24} strokeWidth={2} className="transition-transform duration-200 group-hover:-translate-y-0.5" />
+                            <span className="mt-1 text-xs">{item.name}</span>
                           </Link>
                         )
                       })}

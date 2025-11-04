@@ -3,7 +3,6 @@ import { NavBar } from "@/components/ui/nav-bar";
 import Header from "@/components/header";
 import About from "@/components/About";
 import dynamic from "next/dynamic";
-import FAQ from "@/components/FAQ";
 
 const SectionSkeleton = () => (
   <div
@@ -11,9 +10,6 @@ const SectionSkeleton = () => (
     aria-hidden="true"
   />
 );
-
-const showFaq = "false";
-const showKeyRing ="false";
 
 // Import components lazily to improve initial load performance
 // const Newsletter = dynamic(() => import("@/components/sections/Newsletter"), {
@@ -27,14 +23,6 @@ const Blog = dynamic(() => import("@/components/Blog"), {
 const Contact = dynamic(() => import("@/components/Contact"), {
   loading: () => <SectionSkeleton />
 });
-
-const KeyRingValidation = dynamic(
-  () => import("@/components/KeyRingValidation"),
-  {
-    loading: () => <SectionSkeleton />,
-    ssr: false,
-  }
-);
 
 const Team = dynamic(() => import("@/components/Team"), {
   loading: () => <SectionSkeleton />

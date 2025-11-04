@@ -55,7 +55,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Email Contact */}
           <motion.div 
-            className="space-y-8"
+            className="space-y-8 rounded-3xl border border-red-500/20 bg-zinc-900/60 p-8 shadow-2xl shadow-red-900/20"
             variants={itemVariants}
           >
             <div>
@@ -92,7 +92,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-4 bg-zinc-800/50 rounded-lg hover:bg-zinc-700/50 transition-colors"
+                    className="flex items-center p-4 rounded-lg border border-zinc-800/50 bg-black/30 backdrop-blur hover:border-red-500/30 transition-all duration-200"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

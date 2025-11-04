@@ -6,7 +6,7 @@ import {
   useTransform,
   motion,
 } from "framer-motion";
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
 
@@ -110,7 +110,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
   {
     title: "Cybersecurity event for UM6P-CS Students",
     date: "October 2024",
@@ -130,7 +129,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
   {
     title: "Cybersecurity event for Euro-Med University",
     date: "December 2024",
@@ -150,7 +148,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
   {
     title: "Cybersecurity Hackathon in Tata",
     date: "December 2024",
@@ -170,7 +167,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
   {
     title: "HTB Meetup for ENSA Agadir",
     date: "February 2025",
@@ -190,7 +186,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
   {
     title: "International Meetup",
     date: "June 2025",
@@ -210,7 +205,6 @@ const timelineData: TimelineEntry[] = [
       ]}
     />
   },
-
 ];
 
 const TimelineEntry = ({ 
@@ -278,13 +272,22 @@ export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    if (!ref.current) return;
+
+    const measure = () => {
+      const rect = ref.current?.getBoundingClientRect();
+      if (rect) {
+        setHeight(rect.height);
+      }
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [expanded]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -297,6 +300,11 @@ export default function Timeline() {
   const handleInView = useCallback((index: number) => {
     setActiveIndex(index);
   }, []);
+
+  const VISIBLE_ITEMS = 4;
+  const sortedTimeline = useMemo(() => [...timelineData].reverse(), []);
+  const hasMore = sortedTimeline.length > VISIBLE_ITEMS;
+  const timelineToRender = expanded ? sortedTimeline : sortedTimeline.slice(0, VISIBLE_ITEMS);
 
   return (
     <section className="w-full bg-black pb-10 sm:pb-0" ref={containerRef} id="events">
@@ -322,7 +330,7 @@ export default function Timeline() {
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-10 sm:pb-20">
-        {timelineData.map((item, index) => (
+        {timelineToRender.map((item, index) => (
           <TimelineEntry
             key={item.title}
             item={item}
@@ -331,6 +339,19 @@ export default function Timeline() {
             onInView={handleInView}
           />
         ))}
+
+        {hasMore && (
+          <div className="flex justify-center pt-6">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setExpanded(!expanded)}
+              className="rounded-full border border-red-500/40 px-6 py-2 text-sm font-semibold text-red-200 transition-colors duration-200 hover:border-red-400 hover:text-white"
+            >
+              {expanded ? "Show fewer events" : "Show earlier events"}
+            </motion.button>
+          </div>
+        )}
         
         <div
           style={{ height: height + "px" }}
