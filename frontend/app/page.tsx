@@ -37,7 +37,7 @@ export default function Home() {
     <div className="">
       <NavBar />
       <Header />
-      <KeyRingValidation />
+      {/* <KeyRingValidation /> */}
       <About />
       <Timeline />
       <Blog />
